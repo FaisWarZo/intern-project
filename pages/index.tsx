@@ -1,10 +1,17 @@
+import Footer from "@components/Footer"
+import Navbar from "@components/Navbar"
 import { useState } from "react"
 
 const Home = () => {
-  const [state, setstate] = useState("")
+  // eslint-disable-next-line no-empty-pattern
+  const [] = useState("")
   return (
     <>
-      <div className="w-full bg-red-500 text-3xl font-bold underline">Home</div>
+      <Navbar />
+      <div className="flex h-screen w-full  bg-blackground-black">
+        <div className="mt-32 text-2xl text-white">Hello</div>
+      </div>
+      <Footer />
     </>
   )
 }
