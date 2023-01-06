@@ -1,5 +1,13 @@
 import Link from "next/link"
 import { useState } from "react"
+import {
+  FaEnvelope,
+  FaComment,
+  FaInfoCircle,
+  FaHome,
+  FaPhoneAlt,
+  FaGamepad
+} from "react-icons/fa"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,7 +20,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 z-20 w-full border-b border-gray-600 bg-gray-900 px-2 py-2.5 sm:px-4">
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <a
-          href="https://flowbite.com/"
+          href="/"
           className="flex items-center"
         >
           <img
@@ -20,8 +28,8 @@ const Navbar = () => {
             className="mr-4 h-8 sm:h-12"
             alt="Flowbite Logo"
           />
-          <span className="mt-2 self-center whitespace-nowrap text-2xl font-bold text-white">
-            GAME_FILLING
+          <span className="mt-2 self-center whitespace-nowrap text-2xl text-white">
+            <h2 className="text-base">GAME_FILLING</h2>
           </span>
         </a>
         <div className="flex md:order-2">
@@ -66,37 +74,87 @@ const Navbar = () => {
           <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:text-base md:font-medium md:dark:bg-gray-900">
             <li>
               <a
-                href="#"
-                className="block rounded bg-red-500 py-2 pl-3 pr-4 text-base font-semibold text-white dark:text-white md:bg-transparent md:p-0 md:text-red-500"
+                href="/"
+                className="flex rounded py-2 pl-3 pr-4 text-base font-semibold text-gray-700 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-red-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
                 aria-current="page"
               >
+                <FaHome
+                  size={20}
+                  color="#9ca3af"
+                  className="mr-2 "
+                />
                 Home
               </a>
             </li>
+
             <li>
               <a
                 href="#"
-                className="block rounded py-2 pl-3 pr-4 text-base font-semibold text-gray-700 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-red-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
+                className="flex rounded py-2 pl-3 pr-4 text-base font-semibold text-gray-700 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-red-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
+                aria-current="page"
               >
+                <FaGamepad
+                  size={20}
+                  color="#9ca3af"
+                  className="mr-2 "
+                />
+                Game
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#"
+                className="flex rounded py-2 pl-3 pr-4 text-base font-semibold text-gray-700 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-red-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
+              >
+                <FaEnvelope
+                  size={20}
+                  color="#9ca3af"
+                  className="mr-2"
+                />
+                Top-up
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.facebook.com/GrinUpStudio/"
+                className="flex rounded py-2 pl-3 pr-4 text-base font-semibold text-gray-700 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-red-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
+              >
+                <FaComment
+                  size={20}
+                  color="#9ca3af"
+                  className="mr-2 "
+                />
+                Community
+              </a>
+            </li>
+            <li>
+              <a
+                href="/about"
+                className="flex rounded py-2 pl-3 pr-4 text-base font-semibold text-gray-700 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-red-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
+              >
+                <FaInfoCircle
+                  size={20}
+                  color="#9ca3af"
+                  className="mr-2"
+                />
                 About
               </a>
             </li>
-            <li>
-              <a
-                href="#"
-                className=" block rounded py-2 pl-3 pr-4 text-base font-semibold text-gray-700 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-red-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
-              >
-                Services
-              </a>
-            </li>
-            <li>
+            {/* <li className="flex justify-between">
+              <FaPhoneAlt
+                size={20}
+                color="#9ca3af"
+                className="mr-2"
+              />
               <a
                 href="#"
                 className=" block rounded py-2 pl-3 pr-4 text-base font-semibold text-gray-700 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-red-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
               >
                 Contact
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

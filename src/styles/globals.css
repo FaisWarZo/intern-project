@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@200&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,140 +8,184 @@
 
 html,
 body {
-    background-color: #14161F;
-    font-family: 'Anek Devanagari', sa
+  background-color: #14161f;
+  font-family: "Anek Devanagari", sa;
 }
 
 h2 {
-    font-family: 'Press Start 2P', cursive, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Press Start 2P", cursive, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 input:focus-visible {
-    outline: 1px solid #282A3A;
-  }
+  outline: 1px solid #282a3a;
+}
 
 /* LOGIN */
 .btn-input {
-    background: #282A3A;
-    border: 0;
-    border-radius: 12px;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-block;
-    font-family: 'Press Start 2P', cursive, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    font-size: 12px;
-    font-weight: 50;
-    line-height: 3.6;
-    outline: transparent;
-    padding: 0 2rem;
-    text-align: left;
-    text-decoration: none;
-    transition: box-shadow .2s ease-in-out;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    margin-top: 1.8rem;
+  background: #282a3a;
+  border: 0;
+  border-radius: 12px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Press Start 2P", cursive, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 12px;
+  font-weight: 50;
+  line-height: 3.6;
+  outline: transparent;
+  padding: 0 2rem;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  margin-top: 1.8rem;
 }
 
 .button {
-    background: #dd0930;
-    border: 0;
-    border-radius: 12px;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-block;
-    font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 2.5;
-    outline: transparent;
-    padding: 0 4rem ;
-    text-align: center;
-    text-decoration: none;
-    transition: box-shadow .2s ease-in-out;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(54, 32, 36, 0.5), .125rem .125rem 1rem rgba(255, 255, 255, 0.5)
+  background: #dd0930;
+  border: 0;
+  border-radius: 12px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 4rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem rgba(54, 32, 36, 0.5),
+    0.125rem 0.125rem 1rem rgba(255, 255, 255, 0.5);
 }
 
 .button:not([disabled]):focus {
-    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
+    0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
 }
 
 .button:not([disabled]):hover {
-    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
+    0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
 }
 
 .Rbutton {
-    background: rgba(0, 0, 0, 0.5);
-    border: 0;
-    border-radius: 12px;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-block;
-    font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 2.5;
-    outline: transparent;
-    padding: 0 2rem;
-    text-align: center;
-    text-decoration: none;
-    transition: box-shadow .2s ease-in-out;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
+  background: rgba(0, 0, 0, 0.5);
+  border: 0;
+  border-radius: 12px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
 }
 
 .Rbutton:not([disabled]):focus {
-    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem rgba(255, 255, 255, 0.5);
 }
 
 .Rbutton:not([disabled]):hover {
-    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem rgba(255, 255, 255, 0.5);
 }
 
 .info {
-    font-family: 'Anek Devanagari', sans-serif;
-    font-size: 14px;
-    font-weight: 100;
+  font-family: "Anek Devanagari", sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.infos {
+  font-family: "Noto Sans Thai", sans-serif;
 }
 
 .title:hover,
 .title:focus,
 .title:active {
-    color: #dd0930;
-    border-color: #dd0930;
-
+  color: #dd0930;
+  border-color: #dd0930;
 }
 
 .input {
-    background: #282A3A;
-    border: 0;
-    border-radius: 12px;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-block;
-    font-family: 'Press Start 2P', cursive, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    font-size: 9px;
-    font-weight: 30;
-    line-height: 3.6;
-    outline: transparent;
-    padding: 0 2.5rem;
-    text-align: left;
-    text-decoration: none;
-    transition: box-shadow .2s ease-in-out;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    margin-top: 1.8rem;
+  background: #282a3a;
+  border: 0;
+  border-radius: 12px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Press Start 2P", cursive, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 9px;
+  font-weight: 30;
+  line-height: 3.6;
+  outline: transparent;
+  padding: 0 2.5rem;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  margin-top: 1.8rem;
 }
- 
+
+.aboutcard {
+  box-shadow: 0 1px 3px 0 rgb(255 255 255 / 10%) inset;
+  border-radius: 25px;
+}
+
+/* headerslide */
+.container-slick {
+  padding: 30px;
+}
+
+.headerslide img {
+  margin: auto;
+  width: 100%;
+  height: 500px;
+}
+
+/* hotgameslide */
+
+.hotgameslide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slick-slide > div {
+  margin: 0 70px;
+}
+
+.slick-list {
+  margin: 0 -20px;
+}
