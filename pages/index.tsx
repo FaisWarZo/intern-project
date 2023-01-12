@@ -1,6 +1,6 @@
 import HeaderSlide from "@components/atom/HeaderSlide"
 import Hotgame from "@components/atom/Hotgame"
-import Scoreboard from "@components/atom/scoreboard"
+import Scoreboard from "@components/atom/Scoreboard"
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar"
 import { useState } from "react"

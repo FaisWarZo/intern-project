@@ -32,6 +32,26 @@ const nextConfig = {
         protocol: "https",
         hostname: "media.discordapp.net",
         pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.discordapp.com",
+        pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "www.mobygames.com",
+        pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "assets-prd.ignimgs.com",
+        pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+        pathname: "/**"
       }
     ]
     // domains: ["nakamoto-prod-new.s3.eu-central-1.amazonaws.com"]

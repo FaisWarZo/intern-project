@@ -26,7 +26,7 @@
       "@interfaces/*": ["src/interfaces/*"],
       "@locales/*": ["src/locales/*"],
       "@providers/*": ["src/providers/*"],
-      "@stores/*": ["src/stores/*"],
+      "@stores/*": ["src/store/*"],
       "@styles/*": ["src/styles/*"],
       "@utils/*": ["src/utils/*"],
       "@pages/*": ["pages/*"],

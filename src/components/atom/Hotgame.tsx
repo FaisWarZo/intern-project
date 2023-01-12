@@ -49,7 +49,7 @@ const Hotgame = () => {
         >
           <div>
             <div className="aboutcard bg-gray-900">
-              <img
+              <Image
                 alt="1"
                 src="https://cdn.discordapp.com/attachments/1050317355797975040/1060783416527822930/2Q.png"
                 className="rounded-lg"
@@ -60,13 +60,13 @@ const Hotgame = () => {
                 <div className="mb-2 text-2xl font-bold text-gray-200">
                   Genshin Impact
                 </div>
-                <p className="text-base text-gray-300">mihoyo</p>
+                <p className="text-base text-gray-300">Mihoyo</p>
               </div>
             </div>
           </div>
           <div>
             <div className="aboutcard bg-gray-900">
-              <img
+              <Image
                 alt="2"
                 src="https://cdn.discordapp.com/attachments/1050317355797975040/1060815685317578802/pokemon-scarlet-1659542292648.jpg"
                 className="rounded-lg"
@@ -83,7 +83,7 @@ const Hotgame = () => {
           </div>
           <div>
             <div className="aboutcard bg-gray-900">
-              <img
+              <Image
                 alt="3"
                 src="https://cdn.discordapp.com/attachments/616664805897666560/1060816817280532490/unnamed.png"
                 className="rounded-lg"
@@ -100,7 +100,7 @@ const Hotgame = () => {
           </div>
           <div>
             <div className="aboutcard bg-gray-900">
-              <img
+              <Image
                 alt="4"
                 src="https://cdn.discordapp.com/attachments/616664805897666560/1060818583585828874/unnamed.png"
                 className="rounded-lg"
@@ -117,7 +117,7 @@ const Hotgame = () => {
           </div>
           <div>
             <div className="aboutcard bg-gray-900">
-              <img
+              <Image
                 alt="5"
                 src="https://www.mobygames.com/images/covers/l/501275-honkai-impact-3rd-ipad-front-cover.jpg"
                 className="rounded-lg"
@@ -134,7 +134,7 @@ const Hotgame = () => {
           </div>
           <div>
             <div className="aboutcard bg-gray-900">
-              <img
+              <Image
                 alt="6"
                 src="https://assets-prd.ignimgs.com/2022/08/03/pokemon-violet-1659542326365.jpg"
                 className="rounded-lg"

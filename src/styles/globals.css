@@ -189,3 +189,10 @@ input:focus-visible {
 .slick-list {
   margin: 0 -20px;
 }
+
+/* GAMELIST */
+.fontholder {
+  font-family: "Press Start 2P", cursive, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 10px;
+}
