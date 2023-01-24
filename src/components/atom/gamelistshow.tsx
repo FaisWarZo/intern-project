@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { FaPlay } from "react-icons/fa"
 import Image from "next/image"
+import Link from "next/link"
 
 const Gamelistshow = () => {
   // eslint-disable-next-line no-empty-pattern
@@ -10,6 +11,7 @@ const Gamelistshow = () => {
       <div className="container mx-auto mt-16 grid grid-cols-5 gap-10">
         <div className="gamelistheader">
           <div className="group relative">
+            {/* <Link href={`/gamelist/${gameId}`}> */}
             <Image
               alt="1"
               src="https://cdn.discordapp.com/attachments/1050317355797975040/1060783416527822930/2Q.png"
@@ -24,6 +26,7 @@ const Gamelistshow = () => {
                 <FaPlay />
               </div>
             </div>
+            {/* </Link> */}
           </div>
           <div className="px-6 py-4">
             <div className="text-base font-semibold text-gray-400 md:text-xl">

@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable prefer-arrow-callback */
 import React from "react"
 import Link from "next/link"
 import { useForm } from "react-hook-form"
@@ -7,6 +9,7 @@ import Navbar from "@components/Navbar"
 import { loginUser } from "@src/services/api/login"
 import { ILogin, ILoginUser } from "@src/types/login"
 import { useRouter } from "next/router"
+import toast from "react-hot-toast"
 
 const Login = () => {
   const router = useRouter()
@@ -20,10 +23,24 @@ const Login = () => {
     // eslint-disable-next-line no-console
     console.log(data)
     if (data) {
-      loginUser(data).then((res) => {
-        // console.log(res)
-        router.push("/")
-      })
+      loginUser(data)
+        .then((res) => {
+          console.log(res)
+        })
+        .catch((err) => {
+          console.log("ERROR", err, err.response)
+          if (err.response.status === 400) {
+            console.log(err.response.status)
+          }
+        })
+
+      // loginUser(data).then((res) => {
+      //   // console.log(res)
+      //   // router.push("/")
+      // })
+      // .catch(e) => {
+      //   console.log("ERROR", e)
+      // }
     }
   }
 
