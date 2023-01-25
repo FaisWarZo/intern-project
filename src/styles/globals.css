@@ -31,7 +31,7 @@ input:focus-visible {
   display: inline-block;
   font-family: "Press Start 2P", cursive, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 50;
   line-height: 3.6;
   outline: transparent;
@@ -195,4 +195,19 @@ input:focus-visible {
   font-family: "Press Start 2P", cursive, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 10px;
+}
+
+/* GAMEDETAIL */
+.detail img {
+  width: 100%;
+  height: 100%;
+}
+
+.overview {
+  background-color: #13151c;
+}
+
+.detailinfo img {
+  width: 100%;
+  height: 100%;
 }

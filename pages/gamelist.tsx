@@ -3,7 +3,6 @@ import Search from "@components/atom/Search"
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar"
 import { useState } from "react"
-import { FaPlay } from "react-icons/fa"
 
 const Gamelist = () => {
   // eslint-disable-next-line no-empty-pattern
@@ -17,7 +16,6 @@ const Gamelist = () => {
         <Gamelistshow />
       </div>
       <Footer />
-      {/* <HeaderSlide /> */}
     </>
   )
 }
