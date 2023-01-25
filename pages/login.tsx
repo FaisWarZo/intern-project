@@ -18,7 +18,7 @@ const Login = () => {
   } = useForm()
   const onSubmit = (data) => {
     // eslint-disable-next-line no-console
-    console.log(data)
+    // console.log(data)
     if (data) {
       loginUser(data).then((res) => {
         // console.log(res)
