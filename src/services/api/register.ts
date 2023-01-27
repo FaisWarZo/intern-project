@@ -1,18 +1,19 @@
 /* eslint-disable no-console */
 import { ELocalKey } from "@interfaces/Ilocal"
-import { ILogin } from "@src/types/login"
+import { IRegister } from "@src/types/register"
 import Helper from "@utils/helper"
 import dayjs from "dayjs"
 import router from "next/router"
 import toast from "react-hot-toast"
 import axiosInstance from "../Interceptor"
 
-export const loginUser = async (data: ILogin) => {
+export const registerUser = async (data: IRegister) => {
   const now = dayjs().format("YYYY-MM-DD HH:mm")
   axiosInstance
     .post(
-      "https://8bcf-2001-fb1-17c-24ba-fc9c-6287-b823-549a.ap.ngrok.io/api/auth/signin",
+      "https://8bcf-2001-fb1-17c-24ba-fc9c-6287-b823-549a.ap.ngrok.io/api/auth/signup",
       {
+        "username": data.username,
         "email": data.email,
         "password": data.password
       }
@@ -20,9 +21,9 @@ export const loginUser = async (data: ILogin) => {
     .then((res) => {
       console.log(res.data)
       if (res.data.status) {
-        toast.success("Login Success")
+        toast.success("Create account success.")
         setTimeout(() => {
-          router.push("/")
+          router.push("/login")
         }, 1000)
       } else {
         throw new Error(res.data.message)
@@ -31,15 +32,8 @@ export const loginUser = async (data: ILogin) => {
       return res.data
     })
     .catch((error) => {
-      // console.log(error)
-      toast.error("Email or password invalid.")
-      // console.log("api error 1", error)
-      // console.log("api error 2", error.response)
-      // toast.error("This didn't work.")
-      // if (error.response.status === 400) {
-      //   console.log("api error 3", error)
-      //   toast.error("error.response.data.message")
-      // }
+      console.log(error)
+      toast.error("User already exits.")
       return error
     })
 }
