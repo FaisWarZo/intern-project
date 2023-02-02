@@ -67,9 +67,6 @@ input:focus-visible {
   -webkit-user-select: none;
   touch-action: manipulation;
   white-space: nowrap;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5),
-    -0.125rem -0.125rem 1rem rgba(54, 32, 36, 0.5),
-    0.125rem 0.125rem 1rem rgba(255, 255, 255, 0.5);
 }
 
 .button:not([disabled]):focus {
@@ -82,6 +79,41 @@ input:focus-visible {
   box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
     -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
     0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
+}
+/* GREENBTN */
+.gbutton {
+  background: #76b900;
+  border: 0;
+  border-radius: 12px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 4rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.gbutton:not([disabled]):focus {
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem rgba(47, 255, 82, 0.5),
+    0.125rem 0.125rem 1rem rgba(222, 255, 200, 0.5);
+}
+
+.gbutton:not([disabled]):hover {
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem rgba(47, 255, 82, 0.5),
+    0.125rem 0.125rem 1rem rgba(222, 255, 200, 0.5);
 }
 
 .Rbutton {

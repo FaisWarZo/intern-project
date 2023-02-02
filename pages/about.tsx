@@ -35,13 +35,13 @@ const About = () => (
               </p>
             </div>
             <div className="bg-slate-80 px-6 pt-4 pb-2">
-              <span className="mr-2 mb-2 inline-block rounded-full bg-red-500 px-3 py-1 text-sm font-semibold text-gray-900">
+              <span className="mr-2 mb-2 inline-block rounded-full bg-color-nvidia px-3 py-1 text-sm font-semibold text-gray-900">
                 #Backend
               </span>
-              <span className="mr-2 mb-2 inline-block rounded-full bg-red-500 px-3 py-1 text-sm font-semibold text-gray-900">
+              <span className="mr-2 mb-2 inline-block rounded-full bg-color-nvidia px-3 py-1 text-sm font-semibold text-gray-900">
                 #Nakamoto.games
               </span>
-              <span className="mr-2 mb-2 inline-block rounded-full bg-red-500 px-3 py-1 text-sm font-semibold text-gray-900">
+              <span className="mr-2 mb-2 inline-block rounded-full bg-color-nvidia px-3 py-1 text-sm font-semibold text-gray-900">
                 #KU79
               </span>
             </div>
@@ -69,13 +69,13 @@ const About = () => (
               </p>
             </div>
             <div className="px-6 pt-4 pb-2">
-              <span className="mr-2 mb-2 inline-block rounded-full bg-red-500 px-3 py-1 text-sm font-semibold text-gray-900">
+              <span className="mr-2 mb-2 inline-block rounded-full bg-color-nvidia px-3 py-1 text-sm font-semibold text-gray-900">
                 #Frontend
               </span>
-              <span className="mr-2 mb-2 inline-block rounded-full bg-red-500 px-3 py-1 text-sm font-semibold text-gray-900">
+              <span className="mr-2 mb-2 inline-block rounded-full bg-color-nvidia px-3 py-1 text-sm font-semibold text-gray-900">
                 #Nakamoto.games
               </span>
-              <span className="mr-2 mb-2 inline-block rounded-full bg-red-500 px-3 py-1 text-sm font-semibold text-gray-900">
+              <span className="mr-2 mb-2 inline-block rounded-full bg-color-nvidia px-3 py-1 text-sm font-semibold text-gray-900">
                 #KU79
               </span>
             </div>

@@ -40,7 +40,7 @@ const Hotgame = () => {
   return (
     <div className="mt-10">
       <h2 className="text-2xl text-gray-200">
-        HOT<span className="text-2xl text-red-500">GAME🔥</span>
+        HOT<span className="text-2xl text-color-nvidia">GAME</span>
       </h2>
       <div className="hotgameslide ">
         <Slider

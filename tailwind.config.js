@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       colors: {
         "blackground-black": "#14161F",
-        "colorinput-black": "#282A3A"
+        "colorinput-black": "#282A3A",
+        "color-nvidia": "#76B900"
       }
     }
   },

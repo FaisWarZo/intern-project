@@ -11,7 +11,7 @@ export const loginUser = async (data: ILogin) => {
   const now = dayjs().format("YYYY-MM-DD HH:mm")
   axiosInstance
     .post(
-      "https://8bcf-2001-fb1-17c-24ba-fc9c-6287-b823-549a.ap.ngrok.io/api/auth/signin",
+      "https://8835-2001-fb1-17d-e42f-708e-658-e936-6173.ap.ngrok.io/api/auth/signin",
       {
         "email": data.email,
         "password": data.password

@@ -89,7 +89,7 @@ const Register = () => {
 
           <div className="container mt-12 flex min-w-full flex-col items-center">
             <button
-              className="button"
+              className="gbutton"
               type="submit"
             >
               REGISTER
