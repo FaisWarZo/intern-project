@@ -8,10 +8,15 @@ import {
   FaHome,
   FaGamepad
 } from "react-icons/fa"
+import router from "next/router"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
+  // const viewProfile = () => {
+  //   // router.push(`/Profile/${id}`)
+  //   router.push(`/Profile/63845814fce386616bcfdd72`)
+  // }
   const toggleDropdown = () => {
     setIsOpen(!isOpen)
   }
@@ -35,7 +40,7 @@ const Navbar = () => {
           </span>
         </Link>
         <div className="flex md:order-2 ">
-          <div className="">
+          <div className="hidden">
             <Link href="/login">
               <button
                 type="button"
@@ -46,7 +51,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className="hidden">
+          <div className="">
             <div className="flex">
               <div className="mr-5 flex space-x-4">
                 <Image
@@ -58,9 +63,12 @@ const Navbar = () => {
                 />
                 <div className="ml-5">
                   <h2 className="my-1 text-sm text-white">ArGonic</h2>
-                  <h1 className="font-semibold text-red-500 underline underline-offset-2">
+                  <Link
+                    className="font-semibold text-red-500 underline underline-offset-2"
+                    href="/profile/63845814fce386616bcfdd72"
+                  >
                     View Profile
-                  </h1>
+                  </Link>
                 </div>
               </div>
 
