@@ -29,7 +29,7 @@ const Register = () => {
       />
       <Navbar />
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="mt-60 flex-col justify-center">
+        <div className="mt-60 mb-[350px] flex-col justify-center">
           <h2 className="mb-9 text-center text-2xl text-white">Register </h2>
           <div className="grid place-content-center">
             <div className="btn-input">

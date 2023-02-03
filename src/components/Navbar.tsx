@@ -46,31 +46,33 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className="flex hidden">
-            <div className="mr-5 flex space-x-4">
-              <Image
-                src="https://cdn.discordapp.com/attachments/616664805897666560/1061934191085887508/809170_user_512x512.png"
-                className="mx-auto block  rounded-full border-4 border-red-600"
-                alt="1"
-                width={55}
-                height={55}
-              />
-              <div className="ml-5">
-                <h2 className="my-1 text-sm text-white">ArGonic</h2>
-                <h1 className="font-semibold text-red-500 underline underline-offset-2">
-                  View Profile
-                </h1>
+          <div className="hidden">
+            <div className="flex">
+              <div className="mr-5 flex space-x-4">
+                <Image
+                  src="https://cdn.discordapp.com/attachments/616664805897666560/1061934191085887508/809170_user_512x512.png"
+                  className="mx-auto block  rounded-full border-4 border-red-600"
+                  alt="1"
+                  width={55}
+                  height={55}
+                />
+                <div className="ml-5">
+                  <h2 className="my-1 text-sm text-white">ArGonic</h2>
+                  <h1 className="font-semibold text-red-500 underline underline-offset-2">
+                    View Profile
+                  </h1>
+                </div>
               </div>
-            </div>
 
-            <Link href="/logout">
-              <button
-                type="button"
-                className="button mt-2 font-semibold"
-              >
-                SIGN OUT
-              </button>
-            </Link>
+              <Link href="#/logout">
+                <button
+                  type="button"
+                  className="button mt-2 font-semibold"
+                >
+                  SIGN OUT
+                </button>
+              </Link>
+            </div>
           </div>
 
           <button

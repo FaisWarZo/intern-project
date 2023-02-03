@@ -11,7 +11,7 @@ export const loginUser = async (data: ILogin) => {
   const now = dayjs().format("YYYY-MM-DD HH:mm")
   axiosInstance
     .post(
-      "https://5969-2001-fb1-17d-e42f-708e-658-e936-6173.ap.ngrok.io/api/auth/signin",
+      "https://633f-2001-fb1-17f-4104-8d43-8cdc-2534-539b.ap.ngrok.io/api/auth/signin",
       {
         "email": data.email,
         "password": data.password
@@ -27,9 +27,9 @@ export const loginUser = async (data: ILogin) => {
       } else {
         throw new Error(res.data.message)
       }
-      const token = res.data.data.access_token;
+      const token = res.data.data.access_token
       Helper.setLocalStorage({ key: ELocalKey.time, value: now })
-      localStorage.setItem("accesstoken", JSON.stringify(token));
+      localStorage.setItem("accesstoken", JSON.stringify(token))
       return res.data
     })
     .catch((error) => {

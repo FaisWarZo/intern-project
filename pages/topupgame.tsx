@@ -1,4 +1,5 @@
-import Search from "@components/atom/Search"
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable react/button-has-type */
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar"
 import Image from "next/image"

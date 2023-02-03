@@ -19,9 +19,8 @@ const Home = () => {
           <Hotgame />
           <Scoreboard />
         </div>
+        <Footer />
       </div>
-      <Footer />
-      {/* <HeaderSlide /> */}
     </>
   )
 }

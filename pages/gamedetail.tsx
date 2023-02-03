@@ -4,7 +4,6 @@ import Footer from "@components/Footer"
 import Navbar from "@components/Navbar"
 import Link from "next/link"
 import Image from "next/image"
-import { useState } from "react"
 import { FaArrowLeft } from "react-icons/fa"
 import Slider from "react-slick"
 
@@ -17,13 +16,8 @@ const Gamedetail = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    dotsClass: "slick-dots slick-thumb",
-    customPaging: function (i) {
-      return <div className="m-5 text-white">{i}</div>
-    }
+    dotsClass: "slick-dots slick-thumb"
   }
-
-  const [] = useState("")
   return (
     <>
       <Navbar />
