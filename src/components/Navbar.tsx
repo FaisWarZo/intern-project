@@ -2,7 +2,7 @@ import Link from "next/link"
 import { useState } from "react"
 import Image from "next/image"
 import {
-  FaEnvelope,
+  FaWallet,
   FaComment,
   FaInfoCircle,
   FaHome,
@@ -17,32 +17,61 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="fixed top-0 left-0 z-20 w-full border-b border-gray-600 bg-gray-900 px-2 py-2.5 sm:px-4">
+    <nav className="fixed top-0 left-0 z-10 w-full border-b border-gray-600 bg-gray-900 px-2 py-2.5 sm:px-4">
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <Link
           href="/"
           className="flex items-center"
         >
           <Image
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Video-Game-Controller-Icon.svg/2048px-Video-Game-Controller-Icon.svg.png"
+            src="https://cdn.discordapp.com/attachments/616664805897666560/1070607597914296380/720284.png"
             className="mr-4 h-8 sm:h-12"
             alt="Flowbite Logo"
             width={50}
             height={50}
           />
-          <span className="mt-2 self-center whitespace-nowrap text-2xl text-white">
+          <span className="mt-1 self-center whitespace-nowrap text-2xl text-white">
             <h2 className="text-base">GAME_FILLING</h2>
           </span>
         </Link>
-        <div className="flex md:order-2">
-          <Link href="/login">
-            <button
-              type="button"
-              className="button mr-3 font-semibold"
-            >
-              SIGN IN
-            </button>
-          </Link>
+        <div className="flex md:order-2 ">
+          <div className="">
+            <Link href="/login">
+              <button
+                type="button"
+                className="gbutton mr-3 font-semibold"
+              >
+                SIGN IN
+              </button>
+            </Link>
+          </div>
+
+          <div className="flex hidden">
+            <div className="mr-5 flex space-x-4">
+              <Image
+                src="https://cdn.discordapp.com/attachments/616664805897666560/1061934191085887508/809170_user_512x512.png"
+                className="mx-auto block  rounded-full border-4 border-red-600"
+                alt="1"
+                width={55}
+                height={55}
+              />
+              <div className="ml-5">
+                <h2 className="my-1 text-sm text-white">ArGonic</h2>
+                <h1 className="font-semibold text-red-500 underline underline-offset-2">
+                  View Profile
+                </h1>
+              </div>
+            </div>
+
+            <Link href="/logout">
+              <button
+                type="button"
+                className="button mt-2 font-semibold"
+              >
+                SIGN OUT
+              </button>
+            </Link>
+          </div>
 
           <button
             data-collapse-toggle="navbar-sticky"
@@ -109,7 +138,7 @@ const Navbar = () => {
                 href="/topupgame"
                 className="flex rounded py-2 pl-3 pr-4 text-base font-semibold text-gray-700 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-red-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
               >
-                <FaEnvelope
+                <FaWallet
                   size={20}
                   color="#9ca3af"
                   className="mr-2"

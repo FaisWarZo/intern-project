@@ -6,7 +6,7 @@ const Footer = () => (
       <div className="p-4 text-center text-white">
         © 2022 Copyright :
         <a
-          className="font-medium text-red-500"
+          className="font-medium text-color-nvidia"
           href="https://alpha.naka.im/"
         >
           🕹️GAME_FILLING

@@ -9,10 +9,9 @@ import Navbar from "@components/Navbar"
 import { loginUser } from "@src/services/api/login"
 import { ILogin, ILoginUser } from "@src/types/login"
 import { useRouter } from "next/router"
-import toast from "react-hot-toast"
+import toast, { Toaster } from "react-hot-toast"
 
 const Login = () => {
-  const router = useRouter()
   const {
     register,
     handleSubmit,
@@ -21,11 +20,11 @@ const Login = () => {
   } = useForm()
   const onSubmit = (data) => {
     // eslint-disable-next-line no-console
-    // console.log(data)
+    console.log("input", data)
     if (data) {
       loginUser(data)
         .then((res) => {
-          console.log(res)
+          // console.log(res)
         })
         .catch((err) => {
           console.log("ERROR", err, err.response)
@@ -46,6 +45,10 @@ const Login = () => {
 
   return (
     <>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
       <Navbar />
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mt-60 flex-col justify-center">
@@ -86,12 +89,13 @@ const Login = () => {
           {/* container min-w-full flex flex-col items-center */}
           <div className="container mt-12 flex min-w-full flex-col items-center">
             <button
-              className="button"
+              className="gbutton"
               type="submit"
             >
               SIGN IN
             </button>
           </div>
+
           <div className="mt-5 text-center">
             <Link
               href="/test"
