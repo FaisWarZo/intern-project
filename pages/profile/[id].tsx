@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign */
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar"
 import Link from "next/link"

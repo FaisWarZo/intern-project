@@ -65,7 +65,7 @@ const Topupgame = () => {
                     </div>
                   </div>
                 </div>
-                <button className="mx-auto mt-10 block w-full rounded-md bg-red-500 px-6 py-2 text-base font-semibold text-white outline-none hover:bg-red-600">
+                <button className="mx-auto mt-10 block w-full rounded-md bg-color-nvidia px-6 py-2 text-base font-semibold text-white outline-none hover:bg-green-500">
                   Send proof of transfer
                 </button>
               </div>
@@ -75,7 +75,7 @@ const Topupgame = () => {
                   <div className="absolute inset-0 flex h-full w-10 items-center justify-center">
                     <div className="pointer-events-none h-full w-1 bg-gray-500" />
                   </div>
-                  <div className="relative z-10 inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-red-500 text-white">
+                  <div className="relative z-10 inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-color-nvidia text-white">
                     <svg
                       fill="none"
                       stroke="currentColor"
@@ -103,7 +103,7 @@ const Topupgame = () => {
                   <div className="absolute inset-0 flex h-full w-10 items-center justify-center">
                     <div className="pointer-events-none h-full w-1 bg-gray-500" />
                   </div>
-                  <div className="relative z-10 inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-red-500 text-white">
+                  <div className="relative z-10 inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-color-nvidia text-white">
                     <svg
                       fill="none"
                       stroke="currentColor"
@@ -128,7 +128,7 @@ const Topupgame = () => {
                   </div>
                 </div>
                 <div className="relative flex pb-12">
-                  <div className="relative z-10 inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-red-500 text-white">
+                  <div className="relative z-10 inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-color-nvidia text-white">
                     <svg
                       fill="none"
                       stroke="currentColor"
