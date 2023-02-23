@@ -7,9 +7,7 @@ import { FaEnvelope, FaUnlockAlt } from "react-icons/fa"
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar"
 import { loginUser } from "@src/services/api/login"
-import { ILogin, ILoginUser } from "@src/types/login"
-import { useRouter } from "next/router"
-import toast, { Toaster } from "react-hot-toast"
+import { Toaster } from "react-hot-toast"
 
 const Login = () => {
   const {
@@ -20,7 +18,6 @@ const Login = () => {
   } = useForm()
   const onSubmit = (data) => {
     // eslint-disable-next-line no-console
-    console.log("input", data)
     if (data) {
       loginUser(data)
         .then((res) => {
@@ -32,14 +29,6 @@ const Login = () => {
             console.log(err.response.status)
           }
         })
-
-      // loginUser(data).then((res) => {
-      //   // console.log(res)
-      //   // router.push("/")
-      // })
-      // .catch(e) => {
-      //   console.log("ERROR", e)
-      // }
     }
   }
 

@@ -3,7 +3,7 @@ import React from "react"
 
 const Profile = () => {
   const router = useRouter()
-  console.log(router)
+  // console.log(router)
   return <div>index</div>
 }
 

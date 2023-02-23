@@ -10,13 +10,10 @@ import axiosInstance from "../Interceptor"
 export const loginUser = async (data: ILogin) => {
   const now = dayjs().format("YYYY-MM-DD HH:mm")
   axiosInstance
-    .post(
-      "https://633f-2001-fb1-17f-4104-8d43-8cdc-2534-539b.ap.ngrok.io/api/auth/signin",
-      {
-        "email": data.email,
-        "password": data.password
-      }
-    )
+    .post("http://localhost:5000/api/auth/signin", {
+      "email": data.email,
+      "password": data.password
+    })
     .then((res) => {
       console.log(res.data)
       if (res.data.status) {
@@ -29,19 +26,15 @@ export const loginUser = async (data: ILogin) => {
       }
       const token = res.data.data.access_token
       Helper.setLocalStorage({ key: ELocalKey.time, value: now })
-      localStorage.setItem("accesstoken", JSON.stringify(token))
+      localStorage.setItem("accesstoken", token)
+      // eslint-disable-next-line prefer-destructuring
+      const username = res.data.data.username
+      localStorage.setItem("user", username)
+
       return res.data
     })
     .catch((error) => {
-      // console.log(error)
       toast.error("Email or password invalid.")
-      // console.log("api error 1", error)
-      // console.log("api error 2", error.response)
-      // toast.error("This didn't work.")
-      // if (error.response.status === 400) {
-      //   console.log("api error 3", error)
-      //   toast.error("error.response.data.message")
-      // }
       return error
     })
 }

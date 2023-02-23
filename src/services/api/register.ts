@@ -10,14 +10,11 @@ import axiosInstance from "../Interceptor"
 export const registerUser = async (data: IRegister) => {
   const now = dayjs().format("YYYY-MM-DD HH:mm")
   axiosInstance
-    .post(
-      "https://8bcf-2001-fb1-17c-24ba-fc9c-6287-b823-549a.ap.ngrok.io/api/auth/signup",
-      {
-        "username": data.username,
-        "email": data.email,
-        "password": data.password
-      }
-    )
+    .post("http://localhost:5000/api/auth/signin", {
+      "username": data.username,
+      "email": data.email,
+      "password": data.password
+    })
     .then((res) => {
       console.log(res.data)
       if (res.data.status) {

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Image from "next/image"
 import {
   FaWallet,
@@ -8,15 +8,30 @@ import {
   FaHome,
   FaGamepad
 } from "react-icons/fa"
-import router from "next/router"
+// import { Router } from "next/router"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [myData, setMyData] = useState<string | null>("null")
+  const [name, setName] = useState<string | null>("null")
+
+  useEffect(() => {
+    const data = window.localStorage.getItem("accesstoken")
+    const user = window.localStorage.getItem("user")
+    setName(user)
+    setMyData(data)
+  }, [])
 
   // const viewProfile = () => {
   //   // router.push(`/Profile/${id}`)
   //   router.push(`/Profile/63845814fce386616bcfdd72`)
   // }
+
+  const signout = () => {
+    window.localStorage.clear()
+    window.location.reload()
+  }
+
   const toggleDropdown = () => {
     setIsOpen(!isOpen)
   }
@@ -40,48 +55,49 @@ const Navbar = () => {
           </span>
         </Link>
         <div className="flex md:order-2 ">
-          <div className="hidden">
-            <Link href="/login">
-              <button
-                type="button"
-                className="gbutton mr-3 font-semibold"
-              >
-                SIGN IN
-              </button>
-            </Link>
-          </div>
-
-          <div className="">
-            <div className="flex">
-              <div className="mr-5 flex space-x-4">
-                <Image
-                  src="https://cdn.discordapp.com/attachments/616664805897666560/1061934191085887508/809170_user_512x512.png"
-                  className="mx-auto block  rounded-full border-4 border-red-600"
-                  alt="1"
-                  width={55}
-                  height={55}
-                />
-                <div className="ml-5">
-                  <h2 className="my-1 text-sm text-white">ArGonic</h2>
-                  <Link
-                    className="font-semibold text-red-500 underline underline-offset-2"
-                    href="/profile/63845814fce386616bcfdd72"
-                  >
-                    View Profile
-                  </Link>
+          {myData != null ? (
+            <div className="">
+              <div className="flex">
+                <div className="mr-5 flex space-x-4">
+                  <Image
+                    src="https://cdn.discordapp.com/attachments/616664805897666560/1061934191085887508/809170_user_512x512.png"
+                    className="mx-auto block  rounded-full border-4 border-red-600"
+                    alt="1"
+                    width={55}
+                    height={55}
+                  />
+                  <div className="ml-5">
+                    <h2 className="my-1 text-sm text-white">{name}</h2>
+                    <Link
+                      className="font-semibold text-red-500 underline underline-offset-2"
+                      href="/profile/63845814fce386616bcfdd72"
+                    >
+                      View Profile
+                    </Link>
+                  </div>
                 </div>
-              </div>
 
-              <Link href="#/logout">
                 <button
                   type="button"
                   className="button mt-2 font-semibold"
+                  onClick={signout}
                 >
                   SIGN OUT
                 </button>
+              </div>
+            </div>
+          ) : (
+            <div className="">
+              <Link href="/login">
+                <button
+                  type="button"
+                  className="gbutton mr-3 font-semibold"
+                >
+                  SIGN IN
+                </button>
               </Link>
             </div>
-          </div>
+          )}
 
           <button
             data-collapse-toggle="navbar-sticky"
