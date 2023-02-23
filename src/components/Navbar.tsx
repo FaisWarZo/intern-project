@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import Image from "next/image"
@@ -8,9 +9,11 @@ import {
   FaHome,
   FaGamepad
 } from "react-icons/fa"
-// import { Router } from "next/router"
+import { useSelector } from "react-redux"
+import { dataProfile } from "@feature/authentication/authenticationSlice"
 
 const Navbar = () => {
+  const dataDetailUser = useSelector(dataProfile)
   const [isOpen, setIsOpen] = useState(false)
   const [myData, setMyData] = useState<string | null>("null")
   const [name, setName] = useState<string | null>("null")
@@ -22,11 +25,6 @@ const Navbar = () => {
     setMyData(data)
   }, [])
 
-  // const viewProfile = () => {
-  //   // router.push(`/Profile/${id}`)
-  //   router.push(`/Profile/63845814fce386616bcfdd72`)
-  // }
-
   const signout = () => {
     window.localStorage.clear()
     window.location.reload()
@@ -35,7 +33,7 @@ const Navbar = () => {
   const toggleDropdown = () => {
     setIsOpen(!isOpen)
   }
-
+  console.log("dataDetailUser", dataDetailUser)
   return (
     <nav className="fixed top-0 left-0 z-10 w-full border-b border-gray-600 bg-gray-900 px-2 py-2.5 sm:px-4">
       <div className="container mx-auto flex flex-wrap items-center justify-between">
@@ -70,7 +68,7 @@ const Navbar = () => {
                     <h2 className="my-1 text-sm text-white">{name}</h2>
                     <Link
                       className="font-semibold text-red-500 underline underline-offset-2"
-                      href="/profile/63845814fce386616bcfdd72"
+                      href={`/profile/${dataDetailUser.id}`}
                     >
                       View Profile
                     </Link>

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-return-assign */
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar"
@@ -6,8 +7,11 @@ import { useRouter } from "next/router"
 import React from "react"
 import { FaArrowLeft } from "react-icons/fa"
 import Image from "next/image"
+// import { useSelector } from "react-redux"
+// import { dataProfile } from "@feature/authentication/authenticationSlice"
 
 const ProfileDetail = () => {
+  // const dataDetailUser = useSelector(dataProfile)
   const router = useRouter()
   console.log(router)
   return (

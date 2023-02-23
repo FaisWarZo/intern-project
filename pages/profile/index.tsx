@@ -1,9 +1,15 @@
+import React, { useEffect } from "react"
 import { useRouter } from "next/router"
-import React from "react"
+import { useSelector } from "react-redux"
+import { dataProfile } from "@feature/authentication/authenticationSlice"
 
 const Profile = () => {
   const router = useRouter()
-  // console.log(router)
+  const dataDetailUser = useSelector(dataProfile)
+  useEffect(() => {
+    router.push(dataDetailUser.id)
+  }, [])
+
   return <div>index</div>
 }
 
