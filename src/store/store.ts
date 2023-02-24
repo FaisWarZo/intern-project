@@ -1,3 +1,23 @@
+// import { createStore } from "redux"
+// import { persistStore, persistReducer } from "redux-persist"
+// import storage from "redux-persist/lib/storage" // defaults to localStorage for web
+
+// import authenticationReducer from "../features/authentication/authenticationSlice"
+
+// const persistConfig = {
+//   key: "root",
+//   authentication: authenticationReducer,
+//   storage
+// }
+
+// const persistedReducer = persistReducer(persistConfig, authenticationReducer)
+
+// export default () => {
+//   const store = createStore(persistedReducer)
+//   const persistor = persistStore(store)
+//   return { store, persistor }
+// }
+
 import { configureStore } from "@reduxjs/toolkit"
 import authenticationReducer from "../features/authentication/authenticationSlice"
 

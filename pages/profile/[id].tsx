@@ -3,17 +3,41 @@
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar"
 import Link from "next/link"
-import { useRouter } from "next/router"
-import React from "react"
+import React, { useEffect } from "react"
 import { FaArrowLeft } from "react-icons/fa"
 import Image from "next/image"
-// import { useSelector } from "react-redux"
-// import { dataProfile } from "@feature/authentication/authenticationSlice"
+// import { getUserById } from "@src/services/api/getuserbyid"
+import { useDispatch, useSelector } from "react-redux"
+import {
+  dataProfile,
+  updateProfile
+} from "@feature/authentication/authenticationSlice"
 
 const ProfileDetail = () => {
-  // const dataDetailUser = useSelector(dataProfile)
-  const router = useRouter()
-  console.log(router)
+  const dispatch = useDispatch()
+  const dataDetailUser = useSelector(dataProfile)
+
+  console.log("dataDetailUserId", dataDetailUser)
+
+  const fetchProfile = () => {
+    try {
+      const json = JSON.parse(localStorage.getItem("dataProfile") || "")
+      dispatch(updateProfile(json))
+    } catch (error) {
+      return null
+    }
+  }
+
+  useEffect(() => {
+    if (
+      (typeof window !== "undefined" &&
+        localStorage.getItem("dataProfile") !== null) ||
+      (typeof window !== "undefined" &&
+        localStorage.getItem("dataProfile") !== undefined)
+    ) {
+      fetchProfile()
+    }
+  }, [])
   return (
     <>
       <Navbar />
@@ -44,12 +68,15 @@ const ProfileDetail = () => {
         />
         <div className="aboutcard m-24 mx-auto mb-40 w-2/5 items-center bg-gray-900 text-center">
           <div className="px-6 py-6">
-            <h2 className="text-xl text-gray-200 ">ArGonic</h2>
+            <h2 className="text-xl text-gray-200 ">
+              {dataDetailUser.username}
+            </h2>
             <p className="mt-5 text-xl text-gray-300 ">
-              <span className="font-semibold">Email :</span> narawit.cho@ku.th
+              <span className="font-semibold">Email : </span>
+              {dataDetailUser.email}
               <br />
-              <span className="font-semibold">Profile Link :</span>
-              http://localhost:4002/profile/63845814fce386616bcfdd72
+              <span className="font-semibold">Coin : </span>
+              {dataDetailUser.coin}
               <br />
             </p>
           </div>
@@ -68,3 +95,6 @@ const ProfileDetail = () => {
   )
 }
 export default ProfileDetail
+function dispatch(arg0: any) {
+  throw new Error("Function not implemented.")
+}

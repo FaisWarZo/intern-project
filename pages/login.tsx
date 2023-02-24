@@ -29,11 +29,9 @@ const Login = () => {
   const dispatch = useDispatch()
   const now = dayjs().format("YYYY-MM-DD HH:mm")
   const onSubmit = (data) => {
-    console.log("data", data)
     if (data) {
       loginUser(data)
         .then((res: any) => {
-          console.log("res", res)
           dispatch(updateProfile(res.data.data))
           setTimeout(() => {
             router.push("/")

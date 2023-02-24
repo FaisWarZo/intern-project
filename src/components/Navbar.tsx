@@ -156,7 +156,7 @@ const Navbar = () => {
                 Games
               </Link>
             </li>
-
+            {/* 
             <li>
               <a
                 href="/topupgame"
@@ -169,7 +169,7 @@ const Navbar = () => {
                 />
                 Top-up
               </a>
-            </li>
+            </li> */}
 
             <li>
               <a

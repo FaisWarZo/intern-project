@@ -10,7 +10,7 @@ import axiosInstance from "../Interceptor"
 export const registerUser = async (data: IRegister) => {
   const now = dayjs().format("YYYY-MM-DD HH:mm")
   axiosInstance
-    .post("http://localhost:5000/api/auth/signin", {
+    .post("http://localhost:5000/api/auth/signup", {
       "username": data.username,
       "email": data.email,
       "password": data.password
