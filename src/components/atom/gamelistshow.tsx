@@ -55,7 +55,7 @@ const Gamelistshow = () => {
                 </div>
                 <p className="text-base font-semibold text-gray-400 md:text-xl">
                   Active :
-                  <span className="bg-gray-900 font-medium">
+                  <span className="ml-5 font-medium">
                     {item.is_active ? "🟢" : "🔴"}
                   </span>
                 </p>
