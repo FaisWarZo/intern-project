@@ -17,7 +17,7 @@ const ProfileDetail = () => {
   const dispatch = useDispatch()
   const dataDetailUser = useSelector(dataProfile)
 
-  console.log("dataDetailUserId", dataDetailUser)
+  // console.log("dataDetailUserId", dataDetailUser)
 
   const fetchProfile = () => {
     try {

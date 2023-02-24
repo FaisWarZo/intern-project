@@ -22,26 +22,8 @@ export const loginUser = async (data: ILogin) => {
       console.log(res.data)
       if (res.data.status) {
         toast.success("Login Success")
-
-        // setTimeout(() => {
-        //   router.push("/")
-        // }, 1000)
-        // const token = res.data.data.access_token
-        // Helper.setLocalStorage({ key: ELocalKey.time, value: now })
-        // localStorage.setItem("accesstoken", token)
-        // // eslint-disable-next-line prefer-destructuring
-        // const username = res.data.data.username
-        // localStorage.setItem("user", username)
       }
       return res
-      // const token = res.data.data.access_token
-      // Helper.setLocalStorage({ key: ELocalKey.time, value: now })
-      // localStorage.setItem("accesstoken", token)
-      // // eslint-disable-next-line prefer-destructuring
-      // const username = res.data.data.username
-      // localStorage.setItem("user", username)
-
-      // return res.data
     })
     .catch((error) => {
       toast.error("Email or password invalid.")
