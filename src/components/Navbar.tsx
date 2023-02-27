@@ -172,8 +172,9 @@ const Navbar = () => {
             </li> */}
 
             <li>
-              <a
+              <Link
                 href="https://www.facebook.com/GrinUpStudio/"
+                target="_blank"
                 className="flex rounded py-2 pl-3 pr-4 text-base font-semibold text-gray-700 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-red-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
               >
                 <FaComment
@@ -182,7 +183,7 @@ const Navbar = () => {
                   className="mr-2 "
                 />
                 Community
-              </a>
+              </Link>
             </li>
             <li>
               <Link

@@ -20,7 +20,6 @@ const Gamelistshow = () => {
     fetchData()
   }, [])
 
-  console.log("state", state)
   return (
     <>
       <div className="container mx-auto mt-16 grid grid-cols-5 gap-10">
@@ -31,22 +30,22 @@ const Gamelistshow = () => {
               key={item.id}
             >
               <div className="group relative">
-                {/* <Link href={`/gamelist/${gameId}`}> */}
-                <Image
-                  alt="1"
-                  src={`http://localhost:5000/${item.image_main}`}
-                  className="w-full rounded-lg hover:shadow-2xl"
-                  width={150}
-                  height={150}
-                />
-                <div className=" absolute top-0 right-0 flex h-full w-full justify-center bg-gradient-to-t from-black via-black opacity-0 group-hover:opacity-70" />
-                <div className="absolute top-0 left-0 flex h-full w-full items-center justify-center opacity-0 hover:opacity-100">
-                  <div className="flex text-center text-2xl font-bold text-red-600">
-                    <h2 className="mr-3">PLAY</h2>
-                    <FaPlay />
+                <Link href={`/gamedetail/${item.id}`}>
+                  <Image
+                    alt="1"
+                    src={`http://localhost:5000/${item.image_main}`}
+                    className="w-full rounded-lg hover:shadow-2xl"
+                    width={150}
+                    height={150}
+                  />
+                  <div className=" absolute top-0 right-0 flex h-full w-full justify-center bg-gradient-to-t from-black via-black opacity-0 group-hover:opacity-70" />
+                  <div className="absolute top-0 left-0 flex h-full w-full items-center justify-center opacity-0 hover:opacity-100">
+                    <div className="flex text-center text-2xl font-bold text-red-600">
+                      <h2 className="mr-3">PLAY</h2>
+                      <FaPlay />
+                    </div>
                   </div>
-                </div>
-                {/* </Link> */}
+                </Link>
               </div>
               <div className="px-6 py-4">
                 <div className="text-base font-semibold text-gray-400 md:text-xl">
