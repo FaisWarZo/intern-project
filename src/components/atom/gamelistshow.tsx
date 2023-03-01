@@ -63,11 +63,11 @@ const Gamelistshow = () => {
           ))
         ) : (
           <>
-            <h2 className="text-center">.</h2>
-            <h2 className="text-center">-</h2>
-            <h2 className="text-center ">NO GAMES IN DATA</h2>
-            <h2 className="text-center">-</h2>
-            <h2 className="text-center">.</h2>
+            <h2 className="my-48 text-center">❌</h2>
+            <h2 className="my-48 text-center">❌</h2>
+            <h2 className="my-48 text-center text-white">NO GAMES IN DATA</h2>
+            <h2 className="my-48 text-center">❌</h2>
+            <h2 className="my-48 text-center ">❌</h2>
           </>
         )}
       </div>
