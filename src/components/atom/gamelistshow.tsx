@@ -23,7 +23,7 @@ const Gamelistshow = () => {
   return (
     <>
       <div className="container mx-auto mt-16 grid grid-cols-5 gap-10">
-        {state &&
+        {state ? (
           state.map((item) => (
             <div
               className="gamelistheader"
@@ -60,7 +60,16 @@ const Gamelistshow = () => {
                 </p>
               </div>
             </div>
-          ))}
+          ))
+        ) : (
+          <>
+            <h2 className="text-center">.</h2>
+            <h2 className="text-center">-</h2>
+            <h2 className="text-center ">NO GAMES IN DATA</h2>
+            <h2 className="text-center">-</h2>
+            <h2 className="text-center">.</h2>
+          </>
+        )}
       </div>
     </>
   )
