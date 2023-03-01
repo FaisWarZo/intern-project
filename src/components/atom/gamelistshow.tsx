@@ -7,7 +7,6 @@ import { getAllGame } from "@src/services/api/getallgame"
 import { IAllGame } from "@src/types/allgame"
 
 const Gamelistshow = () => {
-  // eslint-disable-next-line no-empty-pattern
   const [state, setState] = useState<IAllGame[]>()
 
   useEffect(() => {
