@@ -52,6 +52,11 @@ const nextConfig = {
         protocol: "https",
         hostname: "upload.wikimedia.org",
         pathname: "/**"
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        pathname: "/**"
       }
     ]
     // domains: ["nakamoto-prod-new.s3.eu-central-1.amazonaws.com"]

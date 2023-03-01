@@ -7,9 +7,17 @@ import { FaEnvelope, FaUnlockAlt } from "react-icons/fa"
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar"
 import { loginUser } from "@src/services/api/login"
-import { ILogin, ILoginUser } from "@src/types/login"
-import { useRouter } from "next/router"
-import toast, { Toaster } from "react-hot-toast"
+import { Toaster } from "react-hot-toast"
+import {
+  IAuthState,
+  IDatauser,
+  updateProfile
+} from "@feature/authentication/authenticationSlice"
+import { useDispatch } from "react-redux"
+import router from "next/router"
+import Helper from "@utils/helper"
+import { ELocalKey } from "@interfaces/Ilocal"
+import dayjs from "dayjs"
 
 const Login = () => {
   const {
@@ -18,28 +26,29 @@ const Login = () => {
     watch,
     formState: { errors }
   } = useForm()
+  const dispatch = useDispatch()
+  const now = dayjs().format("YYYY-MM-DD HH:mm")
   const onSubmit = (data) => {
-    // eslint-disable-next-line no-console
-    console.log("input", data)
     if (data) {
       loginUser(data)
-        .then((res) => {
-          // console.log(res)
+        .then((res: any) => {
+          dispatch(updateProfile(res.data.data))
+          setTimeout(() => {
+            router.push("/")
+          }, 1000)
+          const token = res.data.data.access_token
+          Helper.setLocalStorage({ key: ELocalKey.time, value: now })
+          localStorage.setItem("accesstoken", token)
+          // eslint-disable-next-line prefer-destructuring
+          const username = res.data.data.username
+          localStorage.setItem("user", username)
         })
         .catch((err) => {
           console.log("ERROR", err, err.response)
-          if (err.response.status === 400) {
+          if (err?.response?.status === 400) {
             console.log(err.response.status)
           }
         })
-
-      // loginUser(data).then((res) => {
-      //   // console.log(res)
-      //   // router.push("/")
-      // })
-      // .catch(e) => {
-      //   console.log("ERROR", e)
-      // }
     }
   }
 
@@ -51,7 +60,7 @@ const Login = () => {
       />
       <Navbar />
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="mt-60 flex-col justify-center">
+        <div className="mt-60 mb-[400px] flex-col justify-center">
           <h2 className="mb-9 text-center text-2xl text-white">SIGN IN </h2>
           <div className="grid place-content-center">
             <div className="btn-input">

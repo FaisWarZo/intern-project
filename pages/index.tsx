@@ -1,13 +1,36 @@
+/* eslint-disable no-console */
 import HeaderSlide from "@components/atom/HeaderSlide"
 import Hotgame from "@components/atom/Hotgame"
 import Scoreboard from "@components/atom/Scoreboard"
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar"
-import { useState } from "react"
+import { updateProfile } from "@feature/authentication/authenticationSlice"
+import { useEffect } from "react"
+import { useDispatch } from "react-redux"
 
 const Home = () => {
-  // eslint-disable-next-line no-empty-pattern
-  const [] = useState("")
+  const dispatch = useDispatch()
+
+  const fetchProfile = () => {
+    try {
+      const json = JSON.parse(localStorage.getItem("dataProfile") || "")
+      dispatch(updateProfile(json))
+    } catch (error) {
+      return null
+    }
+  }
+
+  useEffect(() => {
+    if (
+      (typeof window !== "undefined" &&
+        localStorage.getItem("dataProfile") !== null) ||
+      (typeof window !== "undefined" &&
+        localStorage.getItem("dataProfile") !== undefined)
+    ) {
+      fetchProfile()
+    }
+  }, [])
+
   return (
     <>
       <Navbar />
@@ -19,9 +42,8 @@ const Home = () => {
           <Hotgame />
           <Scoreboard />
         </div>
+        <Footer />
       </div>
-      <Footer />
-      {/* <HeaderSlide /> */}
     </>
   )
 }

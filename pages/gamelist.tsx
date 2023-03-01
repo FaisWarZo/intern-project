@@ -11,8 +11,8 @@ const Gamelist = () => {
     <>
       <Navbar />
       <div className="mt-40">
-        <h2 className="mb-9 text-center text-2xl text-white">🎮 GAMES 🎮</h2>
-        <Search />
+        <h2 className="  mb-24 text-center text-2xl text-white">🎮 GAMES 🎮</h2>
+        {/* <Search /> */}
         <Gamelistshow />
       </div>
       <Footer />
