@@ -11,6 +11,8 @@ export interface IDatauser {
   coin: number
   role: string
   id: string
+  first_name: string
+  last_name: string
   access_token: string
   refresh_token: string
 }
@@ -26,6 +28,8 @@ const initialState: IAuthState = {
     coin: 0,
     role: "",
     id: "",
+    first_name: "",
+    last_name: "",
     access_token: "",
     refresh_token: ""
   },

@@ -78,6 +78,12 @@ const ProfileDetail = () => {
               <span className="font-semibold">Coin : </span>
               {dataDetailUser.coin}
               <br />
+              <span className="font-semibold">First Name : </span>
+              {dataDetailUser.first_name}
+              <br />
+              <span className="font-semibold">Last Name : </span>
+              {dataDetailUser.last_name}
+              <br />
             </p>
           </div>
           <div className="px-6 pt-3 pb-2">

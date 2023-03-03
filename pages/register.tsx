@@ -5,8 +5,10 @@ import { useForm } from "react-hook-form"
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar"
 import { FaEnvelope, FaUnlockAlt, FaUser } from "react-icons/fa"
-import { Toaster } from "react-hot-toast"
+import toast, { Toaster } from "react-hot-toast"
 import { registerUser } from "@src/services/api/register"
+import router from "next/router"
+import { ErrorMessage } from "@hookform/error-message"
 
 const Register = () => {
   const {
@@ -15,12 +17,22 @@ const Register = () => {
     watch,
     formState: { errors }
   } = useForm()
-  const onSubmit = (data) => {
-    console.log("input", data)
-    if (data) {
-      registerUser(data)
+
+  console.log("errors", errors)
+
+  const onSubmit = async (data) => {
+    console.log(data)
+    const { status, data: regisData, message } = await registerUser(data)
+    if (status && regisData) {
+      toast.success(message)
+      setTimeout(() => {
+        router.push("/login")
+      }, 1000)
+    } else {
+      toast.error(message)
     }
   }
+
   return (
     <>
       <Toaster
@@ -39,14 +51,21 @@ const Register = () => {
                   className="mt-2.5"
                 />
                 <input
-                  {...register("username", { required: true })}
+                  {...register("username", { required: "This is required." })}
                   type="text"
-                  id="fname"
+                  id="username"
                   placeholder="Username"
                   className="ml-5 bg-colorinput-black"
                 />
               </div>
             </div>
+            <ErrorMessage
+              errors={errors}
+              name="username"
+              render={({ message }) => (
+                <div className="mt-2 text-red-500">{message}</div>
+              )}
+            />
 
             <div className="btn-input">
               <div className="flex justify-between">
@@ -55,7 +74,7 @@ const Register = () => {
                   className="mt-2.5"
                 />
                 <input
-                  {...register("email", { required: true })}
+                  {...register("email", { required: "This is required." })}
                   type="email"
                   id="email"
                   placeholder="Email address "
@@ -63,6 +82,13 @@ const Register = () => {
                 />
               </div>
             </div>
+            <ErrorMessage
+              errors={errors}
+              name="email"
+              render={({ message }) => (
+                <div className="mt-2 text-red-500">{message}</div>
+              )}
+            />
 
             <div className="btn-input">
               <div className="flex justify-between">
@@ -72,7 +98,7 @@ const Register = () => {
                 />
                 <input
                   {...register("password", {
-                    required: true,
+                    required: "This is required.",
                     minLength: {
                       value: 4,
                       message: "Password must have at least 4 characters"
@@ -85,6 +111,59 @@ const Register = () => {
                 />
               </div>
             </div>
+            <ErrorMessage
+              errors={errors}
+              name="password"
+              render={({ message }) => (
+                <div className="mt-2 text-red-500">{message}</div>
+              )}
+            />
+
+            <div className="btn-input">
+              <div className="flex justify-between">
+                <FaUser
+                  size={20}
+                  className="mt-2.5"
+                />
+                <input
+                  {...register("first_name", { required: "This is required." })}
+                  type="text"
+                  id="fname"
+                  placeholder="First name"
+                  className="ml-5 bg-colorinput-black"
+                />
+              </div>
+            </div>
+            <ErrorMessage
+              errors={errors}
+              name="first_name"
+              render={({ message }) => (
+                <div className="mt-2 text-red-500">{message}</div>
+              )}
+            />
+
+            <div className="btn-input">
+              <div className="flex justify-between">
+                <FaUser
+                  size={20}
+                  className="mt-2.5"
+                />
+                <input
+                  {...register("last_name", { required: "This is required." })}
+                  type="text"
+                  id="lname"
+                  placeholder="Last name"
+                  className="ml-5 bg-colorinput-black"
+                />
+              </div>
+            </div>
+            <ErrorMessage
+              errors={errors}
+              name="last_name"
+              render={({ message }) => (
+                <div className="mt-2 text-red-500">{message}</div>
+              )}
+            />
           </div>
 
           <div className="container mt-12 flex min-w-full flex-col items-center">

@@ -1,5 +1,4 @@
 export interface IGameDetail {
-  map(arg0: (item: any) => any): import("react").ReactNode
   name: string
   detail: string
   is_active: boolean
