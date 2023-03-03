@@ -51,7 +51,13 @@ const Register = () => {
                   className="mt-2.5"
                 />
                 <input
-                  {...register("username", { required: "This is required." })}
+                  {...register("username", {
+                    required: "Please input your username.",
+                    minLength: {
+                      value: 4,
+                      message: "Username must have at least 4 characters"
+                    }
+                  })}
                   type="text"
                   id="username"
                   placeholder="Username"
@@ -74,7 +80,13 @@ const Register = () => {
                   className="mt-2.5"
                 />
                 <input
-                  {...register("email", { required: "This is required." })}
+                  {...register("email", {
+                    required: "Please input your email.",
+                    pattern: {
+                      value: /\S+@\S+\.\S+/,
+                      message: "Entered value does not match email format"
+                    }
+                  })}
                   type="email"
                   id="email"
                   placeholder="Email address "
@@ -98,7 +110,7 @@ const Register = () => {
                 />
                 <input
                   {...register("password", {
-                    required: "This is required.",
+                    required: "Please input your password.",
                     minLength: {
                       value: 4,
                       message: "Password must have at least 4 characters"
@@ -126,7 +138,13 @@ const Register = () => {
                   className="mt-2.5"
                 />
                 <input
-                  {...register("first_name", { required: "This is required." })}
+                  {...register("first_name", {
+                    required: "Please input your Firstname.",
+                    minLength: {
+                      value: 4,
+                      message: "Firstname must have at least 4 characters"
+                    }
+                  })}
                   type="text"
                   id="fname"
                   placeholder="First name"
@@ -149,7 +167,13 @@ const Register = () => {
                   className="mt-2.5"
                 />
                 <input
-                  {...register("last_name", { required: "This is required." })}
+                  {...register("last_name", {
+                    required: "Please input your Lastname.",
+                    minLength: {
+                      value: 4,
+                      message: "Lastname must have at least 4 characters"
+                    }
+                  })}
                   type="text"
                   id="lname"
                   placeholder="Last name"
