@@ -25,7 +25,7 @@ const Gamelistshow = () => {
         {state ? (
           state.map((item) => (
             <div
-              className="gamelistheader"
+              className="gamelistheader mb-44"
               key={item.id}
             >
               <div className="group relative">

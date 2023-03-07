@@ -17,7 +17,7 @@ export interface IDatauser {
   refresh_token: string
 }
 export interface IAuthState {
-  data: IDatauser | any
+  data: IDatauser
   status: boolean
 }
 // Define the initial state using that type
@@ -49,11 +49,14 @@ export const authenticationSlice = createSlice({
       localStorage.setItem("dataProfile", JSON.stringify(action.payload))
       state.data =
         JSON.parse(localStorage.getItem("dataProfile") || "") || action.payload
+    },
+    update_coin: (state, action: PayloadAction<{ coin: number }>) => {
+      state.data.coin = action.payload.coin
     }
   }
 })
 
-export const { updateProfile } = authenticationSlice.actions
+export const { updateProfile, update_coin } = authenticationSlice.actions
 
 export const dataProfile = (state: RootState) => state.authentication.data
 

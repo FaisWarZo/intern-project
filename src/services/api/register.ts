@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
 
+import service from "@configs/setaxios"
 import { IRegister, IRegisterUser } from "@src/types/register"
-import axiosInstance from "../Interceptor"
 
 export const registerUser = async (data: IRegister) =>
-  axiosInstance
+  service
     .post<IRegisterUser>("http://localhost:5000/api/auth/signup", {
       "username": data.username,
       "email": data.email,

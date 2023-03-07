@@ -1,8 +1,8 @@
+import service from "@configs/setaxios"
 import { IGameDetailResponse } from "@src/types/gamedetail"
-import axiosInstance from "../Interceptor"
 
 export const getGameDetail = async (id) =>
-  axiosInstance
+  service
     .get<IGameDetailResponse>(
       `http://localhost:5000/api/user_game/get_game/${id}`
     )

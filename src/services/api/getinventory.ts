@@ -1,9 +1,11 @@
 import service from "@configs/setaxios"
-import { IAllGameResponse } from "@src/types/allgame"
+import { IInventoryResponse } from "@src/types/inventory"
 
-export const getAllGame = async () =>
+export const getInventory = async (id) =>
   service
-    .get<IAllGameResponse>("http://localhost:5000/api/user_game/get_all_game")
+    .get<IInventoryResponse>(
+      `http://localhost:5000/api/user_inventory/get_inventory/${id}`
+    )
     .then((res) => ({
       data: res.data.data,
       status: res.data.status

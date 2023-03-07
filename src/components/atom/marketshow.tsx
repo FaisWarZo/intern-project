@@ -19,18 +19,17 @@ const MarketShow = () => {
     fetchData()
   }, [])
 
-  console.log(state)
   return (
     <>
       <div className="container mx-auto mt-16 grid grid-cols-5 gap-10">
         {state ? (
           state.map((item) => (
             <div
-              className="gamelistheader aboutcard bg-gray-900"
+              className="gamelistheader aboutcard mb-40 bg-gray-900"
               key={item.id}
             >
               <div className="group relative">
-                <Link href={`/gamedetail/${item.id}`}>
+                <Link href={`/marketplace/${item.id}`}>
                   <Image
                     alt="1"
                     src={`http://localhost:5000/${item.image_item}`}
@@ -48,7 +47,7 @@ const MarketShow = () => {
                 </Link>
               </div>
               <div className="px-6 py-4">
-                <div className="text-center text-base font-semibold text-gray-400 md:text-xl">
+                <div className="text-center text-base font-semibold text-gray-300 md:text-xl">
                   <h2 className="bg-gray-900 text-base font-medium">
                     {item.name}
                   </h2>
@@ -63,7 +62,7 @@ const MarketShow = () => {
           <>
             <h2 className="my-48 text-center">❌</h2>
             <h2 className="my-48 text-center">❌</h2>
-            <h2 className="my-48 text-center text-white">NO GAMES IN DATA</h2>
+            <h2 className="my-48 text-center text-white">NO ITEMS IN DATA</h2>
             <h2 className="my-48 text-center">❌</h2>
             <h2 className="my-48 text-center ">❌</h2>
           </>

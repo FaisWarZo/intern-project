@@ -1,8 +1,8 @@
+import service from "@configs/setaxios"
 import { IAllItemResponse } from "@src/types/allitem"
-import axiosInstance from "../Interceptor"
 
 export const getAllItem = async () =>
-  axiosInstance
+  service
     .get<IAllItemResponse>("http://localhost:5000/api/user_item/get_all_item")
     .then((res) => ({
       data: res.data.data,

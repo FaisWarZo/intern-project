@@ -1,17 +1,18 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable no-console */
 /* eslint-disable no-return-assign */
+import React, { useEffect } from "react"
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar"
-import Link from "next/link"
-import React, { useEffect } from "react"
-import { FaArrowLeft } from "react-icons/fa"
+import { FaArchive, FaArrowLeft } from "react-icons/fa"
 import Image from "next/image"
-// import { getUserById } from "@src/services/api/getuserbyid"
 import { useDispatch, useSelector } from "react-redux"
 import {
   dataProfile,
   updateProfile
 } from "@feature/authentication/authenticationSlice"
+import Router from "next/router"
 
 const ProfileDetail = () => {
   const dispatch = useDispatch()
@@ -19,32 +20,33 @@ const ProfileDetail = () => {
 
   // console.log("dataDetailUserId", dataDetailUser)
 
-  const fetchProfile = () => {
-    try {
-      const json = JSON.parse(localStorage.getItem("dataProfile") || "")
-      dispatch(updateProfile(json))
-    } catch (error) {
-      return null
-    }
-  }
+  // const fetchProfile = () => {
+  //   try {
+  //     const json = JSON.parse(localStorage.getItem("dataProfile") || "")
+  //     dispatch(updateProfile(json))
+  //   } catch (error) {
+  //     return null
+  //   }
+  // }
 
-  useEffect(() => {
-    if (
-      (typeof window !== "undefined" &&
-        localStorage.getItem("dataProfile") !== null) ||
-      (typeof window !== "undefined" &&
-        localStorage.getItem("dataProfile") !== undefined)
-    ) {
-      fetchProfile()
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (
+  //     (typeof window !== "undefined" &&
+  //       localStorage.getItem("dataProfile") !== null) ||
+  //     (typeof window !== "undefined" &&
+  //       localStorage.getItem("dataProfile") !== undefined)
+  //   ) {
+  //     fetchProfile()
+  //   }
+  // }, [])
+
   return (
     <>
       <Navbar />
       <div className="container mx-auto mt-28 md:mt-32">
         <div className="flex w-full">
-          <Link
-            href="/"
+          <div
+            onClick={() => Router.back()}
             className="pl-auto"
           >
             <FaArrowLeft
@@ -53,10 +55,22 @@ const ProfileDetail = () => {
               onMouseOver={({ target }) => (target.style.color = "white")}
               onMouseOut={({ target }) => (target.style.color = "#9ca3af")}
             />
-          </Link>
+          </div>
           <h2 className="mb-10 w-full text-center text-2xl text-white md:text-3xl">
             PLAYER PROFILE
           </h2>
+
+          <div
+            onClick={() => Router.push(`/inventory/${dataDetailUser.id}`)}
+            className="pl-auto"
+          >
+            <FaArchive
+              size={40}
+              color="#9ca3af"
+              onMouseOver={({ target }) => (target.style.color = "white")}
+              onMouseOut={({ target }) => (target.style.color = "#9ca3af")}
+            />
+          </div>
         </div>
 
         <Image

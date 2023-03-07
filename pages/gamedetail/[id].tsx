@@ -85,14 +85,17 @@ const Gamedetail = () => {
                 Game Features
               </h5>
               <p className="mb-4 text-base text-gray-300">{state?.detail}</p>
-              <div className="mt-2 flex flex-col items-center">
+              <a
+                className="mt-2 flex flex-col items-center"
+                href={`http://localhost:5000/game/${state.id}/?game_id=${state.id}&player_id=63d0d77ef40f1ba83e097e18`}
+              >
                 <button
                   className="button"
                   type="submit"
                 >
                   PLAY
                 </button>
-              </div>
+              </a>
             </div>
           </div>
 

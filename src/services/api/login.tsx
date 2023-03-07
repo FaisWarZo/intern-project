@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+import service from "@configs/setaxios"
 import { updateProfile } from "@feature/authentication/authenticationSlice"
 import { ELocalKey } from "@interfaces/Ilocal"
 import { ILogin } from "@src/types/login"
@@ -7,13 +8,11 @@ import dayjs from "dayjs"
 // import router from "next/router"
 import toast from "react-hot-toast"
 
-import axiosInstance from "../Interceptor"
-
 export const loginUser = async (data: ILogin) => {
   const now = dayjs().format("YYYY-MM-DD HH:mm")
 
   console.log("data2", data)
-  return axiosInstance
+  return service
     .post("http://localhost:5000/api/auth/signin", {
       "email": data.email,
       "password": data.password

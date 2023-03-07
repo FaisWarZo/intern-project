@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
+import service from "@configs/setaxios"
 import toast from "react-hot-toast"
-import axiosInstance from "../Interceptor"
 
 export const getUserById = async (id: string) => {
-  axiosInstance
+  service
     .get(`http://localhost:5000/api/user/get_user/${id}`)
     .then((res) => {
       if (res.data.status) {

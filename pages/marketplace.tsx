@@ -1,11 +1,33 @@
 import MarketShow from "@components/atom/marketshow"
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar"
-import { useState } from "react"
+import { updateProfile } from "@feature/authentication/authenticationSlice"
+import { useEffect, useState } from "react"
+import { useDispatch } from "react-redux"
 
 const Marketplace = () => {
-  // eslint-disable-next-line no-empty-pattern
-  const [] = useState("")
+  const dispatch = useDispatch()
+
+  const fetchProfile = () => {
+    try {
+      const json = JSON.parse(localStorage.getItem("dataProfile") || "")
+      dispatch(updateProfile(json))
+    } catch (error) {
+      return null
+    }
+  }
+
+  useEffect(() => {
+    if (
+      (typeof window !== "undefined" &&
+        localStorage.getItem("dataProfile") !== null) ||
+      (typeof window !== "undefined" &&
+        localStorage.getItem("dataProfile") !== undefined)
+    ) {
+      fetchProfile()
+    }
+  }, [])
+
   return (
     <>
       <Navbar />
