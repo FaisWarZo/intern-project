@@ -7,7 +7,7 @@ import { FaEnvelope, FaUnlockAlt } from "react-icons/fa"
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar"
 import { loginUser } from "@src/services/api/login"
-import { Toaster } from "react-hot-toast"
+import toast, { Toaster } from "react-hot-toast"
 import {
   IAuthState,
   IDatauser,
@@ -33,6 +33,7 @@ const Login = () => {
       loginUser(data)
         .then((res: any) => {
           dispatch(updateProfile(res.data.data))
+          toast.success("Login Success")
           setTimeout(() => {
             router.push("/")
           }, 1000)
@@ -44,6 +45,7 @@ const Login = () => {
           localStorage.setItem("user", username)
         })
         .catch((err) => {
+          toast.error("Email or password invalid.")
           console.log("ERROR", err, err.response)
           if (err?.response?.status === 400) {
             console.log(err.response.status)
@@ -107,7 +109,7 @@ const Login = () => {
 
           <div className="mt-5 text-center">
             <Link
-              href="/test"
+              href="/forgot-password"
               className="info decoration text-gray-400 underline decoration-gray-400"
             >
               Forgot Password?
