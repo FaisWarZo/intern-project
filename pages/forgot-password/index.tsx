@@ -1,29 +1,37 @@
-import React, { useEffect } from "react"
-import { Toaster } from "react-hot-toast"
+import React from "react"
+import toast, { Toaster } from "react-hot-toast"
 import Navbar from "@components/Navbar"
 import { FaEnvelope } from "react-icons/fa"
 import { ErrorMessage } from "@hookform/error-message"
 import Footer from "@components/Footer"
 import { useForm } from "react-hook-form"
 import Link from "next/link"
-import { useRouter } from "next/router"
+import { ForgotPassword } from "@src/services/api/forgot-password"
+import router from "next/router"
 
 const ForgotPage = () => {
-  const router = useRouter()
-  const { email, token } = router.query
   const {
     register,
     handleSubmit,
     formState: { errors }
   } = useForm()
 
-  const onSubmit = async (data) => {
-    console.log(data)
+  const onSubmit = (data) => {
+    ForgotPassword(data)
+      .then((res) => {
+        if (res.data && res.data.status) {
+          toast.success("The e-mail has been sent.")
+          setTimeout(() => {
+            router.push("/login")
+          }, 1000)
+        } else {
+          toast.error("User not found")
+        }
+      })
+      .catch((_err) => {
+        toast.error(_err)
+      })
   }
-
-  useEffect(() => {
-    console.log(router.query)
-  }, [email, token])
 
   return (
     <>
