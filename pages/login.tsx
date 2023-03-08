@@ -32,7 +32,7 @@ const Login = () => {
     if (data) {
       loginUser(data)
         .then((res) => {
-          if (res.data) {
+          if (res.status) {
             dispatch(updateProfile(res.data))
             const token = res.data?.access_token
             Helper.setLocalStorage({ key: ELocalKey.time, value: now })
@@ -41,6 +41,8 @@ const Login = () => {
             setTimeout(() => {
               router.push("/")
             }, 1000)
+          } else {
+            toast.error("Email or password invalid.")
           }
         })
         .catch((err) => {
