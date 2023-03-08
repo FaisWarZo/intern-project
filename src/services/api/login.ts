@@ -1,16 +1,16 @@
 /* eslint-disable no-console */
 import service from "@configs/setaxios"
-import { ILogin } from "@src/types/login"
+import { ILogin, ILoginData } from "@src/types/login"
 
 export const loginUser = async (data: ILogin) =>
   service
-    .post("http://localhost:5000/api/auth/signin", {
-      "email": data.email,
-      "password": data.password
+    .post<ILoginData>("http://localhost:5000/api/auth/signin", {
+      email: data.email,
+      password: data.password
     })
     .then((res) => ({
-      data: res.data,
-      status: res.status,
+      data: res.data.data,
+      status: res.data.status,
       message: "Login Success"
     }))
     .catch((_error) => ({
