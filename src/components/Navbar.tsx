@@ -15,15 +15,8 @@ import { dataProfile } from "@feature/authentication/authenticationSlice"
 const Navbar = () => {
   const dataDetailUser = useSelector(dataProfile)
   const [isOpen, setIsOpen] = useState(false)
-  const [myData, setMyData] = useState<string | null>("null")
-  const [name, setName] = useState<string | null>("null")
 
-  useEffect(() => {
-    const data = window.localStorage.getItem("accesstoken")
-    const user = window.localStorage.getItem("user")
-    setName(user)
-    setMyData(data)
-  }, [])
+  useEffect(() => {}, [])
 
   const signout = () => {
     window.localStorage.clear()
@@ -33,7 +26,8 @@ const Navbar = () => {
   const toggleDropdown = () => {
     setIsOpen(!isOpen)
   }
-  // console.log("dataDetailUser", dataDetailUser)
+
+  console.log("dataDetailUser", dataDetailUser)
   return (
     <nav className="fixed top-0 left-0 z-10 w-full border-b border-gray-600 bg-gray-900 px-2 py-2.5 sm:px-4">
       <div className="container mx-auto flex flex-wrap items-center justify-between">
@@ -53,7 +47,7 @@ const Navbar = () => {
           </span>
         </Link>
         <div className="flex md:order-2 ">
-          {myData != null ? (
+          {dataDetailUser ? (
             <div className="">
               <div className="flex">
                 <div className="mr-5 flex space-x-4">
@@ -65,10 +59,12 @@ const Navbar = () => {
                     height={55}
                   />
                   <div className="ml-5">
-                    <h2 className="my-1 text-sm text-white">{name}</h2>
+                    <h2 className="my-1 text-sm text-white">
+                      {dataDetailUser.username}
+                    </h2>
                     <Link
                       className="font-semibold text-red-500 underline underline-offset-2"
-                      href={`/profile/${dataDetailUser.id}`}
+                      href="/profile"
                     >
                       View Profile
                     </Link>
@@ -158,7 +154,7 @@ const Navbar = () => {
             </li>
 
             <li>
-              <a
+              <Link
                 href="/marketplace"
                 className="flex rounded py-2 pl-3 pr-4 text-base font-semibold text-gray-700 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-red-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
               >
@@ -168,7 +164,7 @@ const Navbar = () => {
                   className="mr-2"
                 />
                 Marketplace
-              </a>
+              </Link>
             </li>
 
             <li>

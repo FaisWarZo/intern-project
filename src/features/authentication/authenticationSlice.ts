@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 import { createSlice } from "@reduxjs/toolkit"
 import type { PayloadAction } from "@reduxjs/toolkit"
+import { ILoginResponse } from "@src/types/login"
 import type { RootState } from "../../store/store"
-
 // Define a type for the slice state
 
 export interface IDatauser {
@@ -17,22 +17,12 @@ export interface IDatauser {
   refresh_token: string
 }
 export interface IAuthState {
-  data: IDatauser
+  data: IDatauser | undefined
   status: boolean
 }
 // Define the initial state using that type
 const initialState: IAuthState = {
-  data: {
-    username: "",
-    email: "",
-    coin: 0,
-    role: "",
-    id: "",
-    first_name: "",
-    last_name: "",
-    access_token: "",
-    refresh_token: ""
-  },
+  data: undefined,
   status: false
 }
 
@@ -51,12 +41,18 @@ export const authenticationSlice = createSlice({
         JSON.parse(localStorage.getItem("dataProfile") || "") || action.payload
     },
     update_coin: (state, action: PayloadAction<{ coin: number }>) => {
-      state.data.coin = action.payload.coin
+      if (state.data) {
+        state.data.coin = action.payload.coin
+      }
+    },
+    SIGN_IN: (state, action: PayloadAction<ILoginResponse>) => {
+      state.data = action.payload
     }
   }
 })
 
-export const { updateProfile, update_coin } = authenticationSlice.actions
+export const { updateProfile, update_coin, SIGN_IN } =
+  authenticationSlice.actions
 
 export const dataProfile = (state: RootState) => state.authentication.data
 

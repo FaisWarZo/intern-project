@@ -26,3 +26,8 @@ export interface IBuyItemServ {
   data: IUserResponse
   status: boolean
 }
+
+export interface IBuyItemRes {
+  message: string
+  status: boolean
+}

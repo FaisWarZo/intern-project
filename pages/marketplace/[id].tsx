@@ -26,25 +26,16 @@ const Itemdetail = () => {
   const dispatch = useDispatch()
   const dataDetailUser = useSelector(dataProfile)
 
-  const fetchProfile = () => {
-    try {
-      const json = JSON.parse(localStorage.getItem("dataProfile") || "")
-      dispatch(updateProfile(json))
-    } catch (error) {
-      return null
-    }
-  }
-
   const buyItem = async (_userId, _itemId) => {
     const { status, data, message } = await buyItemserv(_userId, _itemId)
     if (status && data) {
       await dispatch(update_coin({ coin: data.user.coin }))
-      toast.success("purchase success.")
+      toast.success("Buy item Success.")
       setTimeout(() => {
-        router.push(`/inventory/${_userId}`)
+        router.push("/inventory")
       }, 1000)
     } else {
-      toast.error("Your coins aren't enough.")
+      toast.error(message)
     }
   }
 
@@ -55,14 +46,6 @@ const Itemdetail = () => {
         setState(data)
       } else {
         router.push("/")
-      }
-      if (
-        (typeof window !== "undefined" &&
-          localStorage.getItem("dataProfile") !== null) ||
-        (typeof window !== "undefined" &&
-          localStorage.getItem("dataProfile") !== undefined)
-      ) {
-        fetchProfile()
       }
     }
     if (id) {
@@ -114,7 +97,7 @@ const Itemdetail = () => {
                   price :<span className="ml-2 font-medium">{state?.cost}</span>
                 </p>
               </div>
-              {dataDetailUser.id ? (
+              {dataDetailUser ? (
                 <div className="mt-10 flex flex-col items-center">
                   <button
                     className="bbutton"

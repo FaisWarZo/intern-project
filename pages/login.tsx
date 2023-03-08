@@ -31,18 +31,17 @@ const Login = () => {
   const onSubmit = (data) => {
     if (data) {
       loginUser(data)
-        .then((res: any) => {
-          dispatch(updateProfile(res.data.data))
-          toast.success("Login Success")
-          setTimeout(() => {
-            router.push("/")
-          }, 1000)
-          const token = res.data.data.access_token
-          Helper.setLocalStorage({ key: ELocalKey.time, value: now })
-          localStorage.setItem("accesstoken", token)
-          // eslint-disable-next-line prefer-destructuring
-          const username = res.data.data.username
-          localStorage.setItem("user", username)
+        .then((res) => {
+          if (res.data) {
+            dispatch(updateProfile(res.data))
+            const token = res.data?.access_token
+            Helper.setLocalStorage({ key: ELocalKey.time, value: now })
+            localStorage.setItem("accesstoken", token)
+            toast.success("Login Success")
+            setTimeout(() => {
+              router.push("/")
+            }, 1000)
+          }
         })
         .catch((err) => {
           toast.error("Email or password invalid.")

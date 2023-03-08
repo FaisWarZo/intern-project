@@ -7,27 +7,6 @@ import { useDispatch } from "react-redux"
 
 const Gamelist = () => {
   const dispatch = useDispatch()
-
-  const fetchProfile = () => {
-    try {
-      const json = JSON.parse(localStorage.getItem("dataProfile") || "")
-      dispatch(updateProfile(json))
-    } catch (error) {
-      return null
-    }
-  }
-
-  useEffect(() => {
-    if (
-      (typeof window !== "undefined" &&
-        localStorage.getItem("dataProfile") !== null) ||
-      (typeof window !== "undefined" &&
-        localStorage.getItem("dataProfile") !== undefined)
-    ) {
-      fetchProfile()
-    }
-  }, [])
-
   return (
     <>
       <Navbar />

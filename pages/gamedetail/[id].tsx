@@ -9,11 +9,14 @@ import { useEffect, useState } from "react"
 import { getGameDetail } from "@src/services/api/gamedetail"
 import { IGameDetail } from "@src/types/gamedetail"
 import { useRouter } from "next/router"
+import { useSelector } from "react-redux"
+import { dataProfile } from "@feature/authentication/authenticationSlice"
 
 const Gamedetail = () => {
   const router = useRouter()
   const { id } = router.query
   const [state, setState] = useState<IGameDetail>()
+  const dataDetailUser = useSelector(dataProfile)
 
   useEffect(() => {
     async function fetchData() {
@@ -85,17 +88,23 @@ const Gamedetail = () => {
                 Game Features
               </h5>
               <p className="mb-4 text-base text-gray-300">{state?.detail}</p>
-              <a
-                className="mt-2 flex flex-col items-center"
-                href={`http://localhost:5000/game/${state.id}/?game_id=${state.id}&player_id=63d0d77ef40f1ba83e097e18`}
-              >
-                <button
-                  className="button"
-                  type="submit"
+              {dataDetailUser ? (
+                <a
+                  className="mt-2 flex flex-col items-center"
+                  href={`http://localhost:5000/game/${state.id}/?game_id=${state.id}&player_id=${dataDetailUser.id}`}
                 >
-                  PLAY
-                </button>
-              </a>
+                  <button
+                    className="button"
+                    type="submit"
+                  >
+                    PLAY
+                  </button>
+                </a>
+              ) : (
+                <div className="mt-10 flex flex-col items-center">
+                  <h2 className="text-2xl text-gray-500">Please login 👆</h2>
+                </div>
+              )}
             </div>
           </div>
 
