@@ -25,7 +25,7 @@ const NewPassword = () => {
   const onSubmit = async (data) => {
     const { message, status } = await resetPassword(token, data.password)
     if (status) {
-      toast.success(message)
+      toast.success("Create new password success.")
       setTimeout(() => {
         router.push("/login")
       }, 1000)
