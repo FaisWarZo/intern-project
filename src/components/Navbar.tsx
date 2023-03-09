@@ -27,7 +27,6 @@ const Navbar = () => {
     setIsOpen(!isOpen)
   }
 
-  console.log("dataDetailUser", dataDetailUser)
   return (
     <div className="fixed top-0 left-0 z-10 w-full border-b border-gray-600 bg-gray-900 px-2 py-2.5 sm:px-4">
       <div className="container mx-auto flex flex-wrap items-center justify-between">
@@ -37,10 +36,10 @@ const Navbar = () => {
         >
           <Image
             src="https://cdn.discordapp.com/attachments/616664805897666560/1070607597914296380/720284.png"
-            className="mr-4 h-8 sm:h-12"
+            className="mr-4 "
             alt="Flowbite Logo"
-            width={50}
-            height={50}
+            width={65}
+            height={65}
           />
           <span className="mt-1 self-center whitespace-nowrap text-2xl text-white">
             <h2 className="text-base">GAME_FILLING</h2>
@@ -53,15 +52,18 @@ const Navbar = () => {
                 <div className="mr-5 flex space-x-4">
                   <Image
                     src="https://cdn.discordapp.com/attachments/616664805897666560/1061934191085887508/809170_user_512x512.png"
-                    className="mx-auto block  rounded-full border-4 border-red-600"
+                    className="mx-auto block  rounded-full border-4 border-red-600 "
                     alt="1"
-                    width={55}
-                    height={55}
+                    width={75}
+                    height={60}
                   />
                   <div className="ml-5">
                     <h2 className="my-1 text-sm text-white">
                       {dataDetailUser.username}
                     </h2>
+                    <h1 className="my-1 text-sm text-white">
+                      🪙Coin : {dataDetailUser.coin}
+                    </h1>
                     <Link
                       className="font-semibold text-red-500 underline underline-offset-2"
                       href="/profile"
@@ -73,7 +75,7 @@ const Navbar = () => {
 
                 <button
                   type="button"
-                  className="button mt-2 font-semibold"
+                  className="button mt-5 h-1/2 font-semibold"
                   onClick={signout}
                 >
                   SIGN OUT

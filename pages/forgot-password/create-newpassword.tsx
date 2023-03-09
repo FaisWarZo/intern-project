@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from "react"
-import { Toaster } from "react-hot-toast"
+/* eslint-disable no-unused-vars */
+import React, { useEffect, useRef, useState } from "react"
+import toast, { Toaster } from "react-hot-toast"
 import Navbar from "@components/Navbar"
 import { FaUnlockAlt } from "react-icons/fa"
 import { ErrorMessage } from "@hookform/error-message"
@@ -7,27 +8,31 @@ import Footer from "@components/Footer"
 import { useForm } from "react-hook-form"
 import Link from "next/link"
 import { useRouter } from "next/router"
+import { resetPassword } from "@src/services/api/reset_password"
 
 const NewPassword = () => {
   const router = useRouter()
-  const { email, token } = router.query
+  const { token } = router.query
   const {
     register,
     handleSubmit,
     formState: { errors },
     watch
   } = useForm()
-
   const password = watch("password")
   const confirmPassword = watch("confirmPassword")
 
   const onSubmit = async (data) => {
-    console.log(data)
+    const { message, status } = await resetPassword(token, data.password)
+    if (status) {
+      toast.success(message)
+      setTimeout(() => {
+        router.push("/login")
+      }, 1000)
+    } else {
+      toast.error(message)
+    }
   }
-
-  useEffect(() => {
-    console.log(router.query)
-  }, [email, token])
 
   return (
     <>

@@ -26,16 +26,11 @@ const initialState: IAuthState = {
   status: false
 }
 
-console.log(
-  typeof window !== "undefined" &&
-    typeof localStorage.getItem("dataProfile") === "string"
-)
 export const authenticationSlice = createSlice({
   name: "authentication",
   initialState,
   reducers: {
     updateProfile: (state, action: PayloadAction<IDatauser>) => {
-      // console.log("action", action.payload)
       localStorage.setItem("dataProfile", JSON.stringify(action.payload))
       state.data =
         JSON.parse(localStorage.getItem("dataProfile") || "") || action.payload
