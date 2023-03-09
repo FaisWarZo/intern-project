@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import HeaderSlide from "@components/atom/HeaderSlide"
-import Hotgame from "@components/atom/Hotgame"
+import Hotgame from "@components/atom/ourgame"
 import Scoreboard from "@components/atom/Scoreboard"
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar"
