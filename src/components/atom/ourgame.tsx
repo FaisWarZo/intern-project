@@ -3,8 +3,6 @@ import Slider from "react-slick"
 import Image from "next/image"
 import { IAllGame } from "@src/types/allgame"
 import { getAllGame } from "@src/services/api/getallgame"
-import Link from "next/link"
-import { FaPlay } from "react-icons/fa"
 
 const Hotgame = () => {
   const [state, setState] = useState<IAllGame[]>()
@@ -55,8 +53,8 @@ const Hotgame = () => {
 
   return (
     <div className="mt-10">
-      <h2 className="text-2xl text-gray-200">
-        OUR<span className="text-2xl text-color-nvidia">GAME</span>
+      <h2 className="ml-5 text-2xl text-gray-200">
+        OUR<span className=" text-2xl text-color-nvidia">GAME</span>
       </h2>
       <div className="hotgameslide ">
         <Slider

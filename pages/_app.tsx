@@ -1,21 +1,18 @@
-/* eslint-disable import/no-unresolved */
+/* eslint-disable no-console */
 import type { AppProps } from "next/app"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import "@styles/globals.css"
 import { Provider } from "react-redux"
-import { PersistGate } from "redux-persist/integration/react"
-import { persistor, store } from "@stores/store"
+import { store } from "@stores/store"
+
+import RunBackGround from "@providers/RunBackGround"
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
-      <PersistGate
-        loading={null}
-        persistor={persistor}
-      >
-        <Component {...pageProps} />
-      </PersistGate>
+      <RunBackGround />
+      <Component {...pageProps} />
     </Provider>
   )
 }

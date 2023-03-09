@@ -2,6 +2,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 import type { PayloadAction } from "@reduxjs/toolkit"
 import { ILoginResponse } from "@src/types/login"
+import { IGetuserByEmail } from "@src/types/getuseremail"
 import type { RootState } from "../../store/store"
 // Define a type for the slice state
 
@@ -31,9 +32,21 @@ export const authenticationSlice = createSlice({
   initialState,
   reducers: {
     updateProfile: (state, action: PayloadAction<IDatauser>) => {
-      localStorage.setItem("dataProfile", JSON.stringify(action.payload))
-      state.data =
-        JSON.parse(localStorage.getItem("dataProfile") || "") || action.payload
+      state.data = action.payload
+    },
+    updateProfileRefresh: (state, action: PayloadAction<IGetuserByEmail>) => {
+      const _data = {
+        username: action.payload.username,
+        email: action.payload.email,
+        coin: action.payload.coin,
+        role: action.payload.role,
+        id: action.payload.id,
+        first_name: action.payload.first_name,
+        last_name: action.payload.last_name,
+        access_token: "",
+        refresh_token: ""
+      }
+      state.data = _data
     },
     update_coin: (state, action: PayloadAction<{ coin: number }>) => {
       if (state.data) {
@@ -46,7 +59,7 @@ export const authenticationSlice = createSlice({
   }
 })
 
-export const { updateProfile, update_coin, SIGN_IN } =
+export const { updateProfile, update_coin, SIGN_IN, updateProfileRefresh } =
   authenticationSlice.actions
 
 export const dataProfile = (state: RootState) => state.authentication.data

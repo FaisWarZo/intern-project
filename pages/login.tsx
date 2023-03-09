@@ -35,8 +35,12 @@ const Login = () => {
           if (res.data) {
             dispatch(updateProfile(res.data))
             const token = res.data?.access_token
+            const refeshtoken = res.data?.refresh_token
+            const email = res.data?.email
             Helper.setLocalStorage({ key: ELocalKey.time, value: now })
             localStorage.setItem("accesstoken", token)
+            localStorage.setItem("refresh_token", refeshtoken)
+            localStorage.setItem("email", email)
           }
           if (res.status) {
             toast.success("Login Success")

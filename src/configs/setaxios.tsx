@@ -1,9 +1,9 @@
 import axios, { AxiosRequestConfig } from "axios"
 
 const service = axios.create({
-  baseURL: "http://localhost:5000"
-  //   headers: { "Content-Type": "application/json" },
-  //   withCredentials: true
+  baseURL: "http://localhost:5000",
+  headers: { "Content-Type": "application/json" },
+  withCredentials: true
 })
 
 service.interceptors.request.use((config: AxiosRequestConfig) => {
@@ -16,13 +16,5 @@ service.interceptors.request.use((config: AxiosRequestConfig) => {
   }
   return config
 })
-
-// service.interceptors.response.use(
-// //   async (response) => response,
-// //   (error) => {
-// //     //handle revoke token, refresh token
-// //     return
-// //   }
-// )
 
 export default service

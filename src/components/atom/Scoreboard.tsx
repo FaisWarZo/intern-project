@@ -39,7 +39,7 @@ const Scoreboard = () => {
 
   return (
     <div className="mt-10">
-      <h2 className="text-2xl text-gray-200">
+      <h2 className="ml-5 text-2xl text-gray-200">
         TOP<span className="text-2xl text-color-nvidia">PLAYERS</span>
       </h2>
       <Slider
