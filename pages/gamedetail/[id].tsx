@@ -90,8 +90,10 @@ const Gamedetail = () => {
               <p className="mb-4 text-base text-gray-300">{state?.detail}</p>
               {dataDetailUser ? (
                 <a
+                  target="_blank"
                   className="mt-2 flex flex-col items-center"
                   href={`http://localhost:5000/game/${state.id}/?game_id=${state.id}&player_id=${dataDetailUser.id}`}
+                  rel="noreferrer"
                 >
                   <button
                     className="button"
