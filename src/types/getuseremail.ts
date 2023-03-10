@@ -6,6 +6,7 @@ export interface IGetuserByEmail {
   first_name: string
   last_name: string
   id: string
+  frame: string
 }
 
 export interface IGetUser {

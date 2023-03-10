@@ -9,11 +9,12 @@ import type { RootState } from "../../store/store"
 export interface IDatauser {
   username: string
   email: string
-  coin: number
   role: string
-  id: string
+  coin: number
   first_name: string
   last_name: string
+  frame: string
+  id: string
   access_token: string
   refresh_token: string
 }
@@ -43,6 +44,7 @@ export const authenticationSlice = createSlice({
         id: action.payload.id,
         first_name: action.payload.first_name,
         last_name: action.payload.last_name,
+        frame: action.payload.frame,
         access_token: "",
         refresh_token: ""
       }

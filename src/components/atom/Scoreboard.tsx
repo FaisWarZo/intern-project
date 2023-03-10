@@ -94,7 +94,7 @@ const Scoreboard = () => {
                     {item.username}
                   </h2>
                   <p className="text-center text-base text-gray-300">
-                    {item.coin} Points
+                    {item.coin} Coins
                   </p>
                 </div>
               </div>

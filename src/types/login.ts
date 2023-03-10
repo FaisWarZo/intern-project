@@ -17,6 +17,7 @@ export interface ILoginResponse {
   id: string
   access_token: string
   refresh_token: string
+  frame: string
 }
 
 export interface ILoginData {
