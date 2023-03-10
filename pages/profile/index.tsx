@@ -8,6 +8,7 @@ import Navbar from "@components/Navbar"
 import { FaArchive, FaArrowLeft } from "react-icons/fa"
 import Image from "next/image"
 import { useDispatch, useSelector } from "react-redux"
+
 import {
   dataProfile,
   updateProfile
@@ -50,14 +51,21 @@ const ProfileDetail = () => {
             />
           </div>
         </div>
+        <div className="borderpicture mx-auto">
+          <Image
+            src="https://cdn.discordapp.com/attachments/616664805897666560/1061934191085887508/809170_user_512x512.png"
+            className="profile"
+            width={320}
+            height={320}
+            alt="Main Image"
+          />
+          <Image
+            src="https://media.discordapp.net/attachments/616664805897666560/1083641467022618644/Red_frame.png?width=620&height=620"
+            alt="Main Image"
+            layout="fill"
+          />
+        </div>
 
-        <Image
-          src="https://cdn.discordapp.com/attachments/616664805897666560/1061934191085887508/809170_user_512x512.png"
-          className="mx-auto mt-9 block rounded-full border-4 border-gray-600"
-          alt="1"
-          width={200}
-          height={200}
-        />
         <div className="aboutcard m-24 mx-auto mb-40 w-2/5 items-center bg-gray-900 text-center">
           <div className="px-6 py-6">
             <h2 className="text-xl text-gray-200 ">
