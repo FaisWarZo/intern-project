@@ -75,7 +75,7 @@ const ProfileDetail = () => {
               <span className="font-semibold">Email : </span>
               {dataDetailUser?.email}
               <br />
-              <span className="font-semibold">Coin : </span>
+              <span className="font-semibold">Coins : </span>
               {dataDetailUser?.coin}
               <br />
               <span className="font-semibold">First Name : </span>
