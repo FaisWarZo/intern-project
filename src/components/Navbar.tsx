@@ -50,13 +50,20 @@ const Navbar = () => {
             <div className="">
               <div className="flex">
                 <div className="mr-5 flex space-x-4">
-                  <Image
-                    src="https://cdn.discordapp.com/attachments/616664805897666560/1061934191085887508/809170_user_512x512.png"
-                    className="mx-auto block  rounded-full border-4 border-red-600 "
-                    alt="1"
-                    width={75}
-                    height={60}
-                  />
+                  <div className="nborderpicture mx-auto">
+                    <Image
+                      src="https://cdn.discordapp.com/attachments/616664805897666560/1061934191085887508/809170_user_512x512.png"
+                      className="nprofile"
+                      width={51}
+                      height={51}
+                      alt="Main Image"
+                    />
+                    <Image
+                      src="https://media.discordapp.net/attachments/616664805897666560/1083641467022618644/Red_frame.png?width=620&height=620"
+                      alt="Banner Image"
+                      layout="fill"
+                    />
+                  </div>
                   <div className="ml-5">
                     <h2 className="my-1 text-sm text-white">
                       {dataDetailUser.username}

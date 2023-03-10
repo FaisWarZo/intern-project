@@ -61,7 +61,7 @@ const ProfileDetail = () => {
           />
           <Image
             src="https://media.discordapp.net/attachments/616664805897666560/1083641467022618644/Red_frame.png?width=620&height=620"
-            alt="Main Image"
+            alt="Banner Image"
             layout="fill"
           />
         </div>

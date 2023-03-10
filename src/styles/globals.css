@@ -279,7 +279,7 @@ input:focus-visible {
   width: 100%;
   height: 100%;
 }
-
+/* /////// */
 .borderpicture {
   position: relative;
   height: 500px;
@@ -287,6 +287,18 @@ input:focus-visible {
 }
 
 .profile {
+  position: absolute;
+  left: 18%;
+  top: 19%;
+}
+/* picnavbar */
+.nborderpicture {
+  position: relative;
+  height: 80px;
+  width: 80px;
+}
+
+.nprofile {
   position: absolute;
   left: 18%;
   top: 19%;
