@@ -4,6 +4,7 @@ export interface IInventory {
   totalQty: number
   image_item: string
   item_id: string
+  record_id: string
 }
 export interface IInventoryResponse {
   data: IInventory[]

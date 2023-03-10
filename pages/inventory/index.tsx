@@ -16,6 +16,11 @@ const Inventory = () => {
   const [state, setState] = useState<IInventory[]>()
   const dataDetailUser = useSelector(dataProfile)
 
+  const useditem = async (_userId, _recordId) => {
+    console.log("_userId", _userId)
+    console.log("record_id", _recordId)
+  }
+
   useEffect(() => {
     async function fetchData(id: string) {
       const { status, data } = await getInventory(id)
@@ -44,7 +49,12 @@ const Inventory = () => {
                     className="gamelistheader"
                     key={item._id}
                   >
-                    <div className="group relative">
+                    <button
+                      className="group relative"
+                      onClick={() =>
+                        useditem(dataDetailUser?.id, item.record_id)
+                      }
+                    >
                       <Image
                         alt="1"
                         src={`http://localhost:5000/${item.image_item}`}
@@ -52,7 +62,17 @@ const Inventory = () => {
                         width={150}
                         height={150}
                       />
-                    </div>
+                      <div className=" absolute top-0 right-0 flex h-full w-full justify-center bg-gradient-to-t from-black via-black opacity-0 group-hover:opacity-70" />
+                      <div className="absolute top-0 left-0 flex h-full w-full items-center justify-center opacity-0 hover:opacity-100">
+                        <div className="flex text-center text-xl font-bold">
+                          {item.image_item === dataDetailUser?.frame ? (
+                            <h2 className="mr-3 text-red-500 ">EQUIPED</h2>
+                          ) : (
+                            <h2 className="mr-3 text-green-500">USE</h2>
+                          )}
+                        </div>
+                      </div>
+                    </button>
                     <div className="px-6 py-4">
                       <div className="text-base font-semibold text-gray-400 md:text-xl">
                         Name :
