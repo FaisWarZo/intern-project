@@ -5,14 +5,11 @@
 import React, { useEffect } from "react"
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar"
-import { FaArchive, FaArrowLeft } from "react-icons/fa"
+import { FaArchive, FaArrowLeft, FaUserEdit } from "react-icons/fa"
 import Image from "next/image"
 import { useDispatch, useSelector } from "react-redux"
 
-import {
-  dataProfile,
-  updateProfile
-} from "@feature/authentication/authenticationSlice"
+import { dataProfile } from "@feature/authentication/authenticationSlice"
 import Router from "next/router"
 
 const ProfileDetail = () => {
@@ -39,18 +36,21 @@ const ProfileDetail = () => {
             PLAYER PROFILE
           </h2>
 
-          <div
-            onClick={() => Router.push("/inventory")}
-            className="pl-auto"
-          >
-            <FaArchive
-              size={40}
-              color="#9ca3af"
-              onMouseOver={({ target }) => (target.style.color = "white")}
-              onMouseOut={({ target }) => (target.style.color = "#9ca3af")}
-            />
+          <div>
+            <div
+              onClick={() => Router.push("/inventory")}
+              className="pl-auto"
+            >
+              <FaArchive
+                size={40}
+                color="#9ca3af"
+                onMouseOver={({ target }) => (target.style.color = "white")}
+                onMouseOut={({ target }) => (target.style.color = "#9ca3af")}
+              />
+            </div>
           </div>
         </div>
+
         <div className="borderpicture mx-auto">
           <Image
             src="https://cdn.discordapp.com/attachments/616664805897666560/1061934191085887508/809170_user_512x512.png"
@@ -68,6 +68,17 @@ const ProfileDetail = () => {
 
         <div className="aboutcard m-24 mx-auto mb-40 w-2/5 items-center bg-gray-900 text-center">
           <div className="px-6 py-6">
+            <div
+              onClick={() => Router.push("")}
+              className="flex justify-end"
+            >
+              <FaUserEdit
+                size={30}
+                color="#9ca3af"
+                onMouseOver={({ target }) => (target.style.color = "white")}
+                onMouseOut={({ target }) => (target.style.color = "#9ca3af")}
+              />
+            </div>
             <h2 className="text-xl text-gray-200 ">
               {dataDetailUser?.username}
             </h2>

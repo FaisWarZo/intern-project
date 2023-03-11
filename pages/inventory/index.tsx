@@ -2,23 +2,38 @@
 /* eslint-disable react/button-has-type */
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar"
-import { dataProfile } from "@feature/authentication/authenticationSlice"
+import {
+  dataProfile,
+  update_frame
+} from "@feature/authentication/authenticationSlice"
 import { getInventory } from "@src/services/api/getinventory"
+import { selectItemUser } from "@src/services/api/useitem"
 
 import { IInventory } from "@src/types/inventory"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-import { useSelector } from "react-redux"
+import toast, { Toaster } from "react-hot-toast"
+import { useDispatch, useSelector } from "react-redux"
 
 const Inventory = () => {
   const router = useRouter()
+  const dispatch = useDispatch()
   const [state, setState] = useState<IInventory[]>()
   const dataDetailUser = useSelector(dataProfile)
 
-  const useditem = async (_userId, _recordId) => {
-    console.log("_userId", _userId)
-    console.log("record_id", _recordId)
+  const useditem = async (_userId, _recordId, _frameId) => {
+    const { status, data, message } = await selectItemUser(_userId, _recordId)
+    if (status && data) {
+      if (dataDetailUser?.frame === _frameId) {
+        toast.error("Item already used")
+      } else {
+        dispatch(update_frame({ frame: data.frame }))
+        toast.success("Use item success.")
+      }
+    } else {
+      toast.error(message)
+    }
   }
 
   useEffect(() => {
@@ -37,6 +52,10 @@ const Inventory = () => {
 
   return (
     <>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
       <Navbar />
       <div className="container mx-auto mt-40">
         <h2 className="text-center text-2xl text-white">📦 Inventory 📦</h2>
@@ -52,7 +71,11 @@ const Inventory = () => {
                     <button
                       className="group relative"
                       onClick={() =>
-                        useditem(dataDetailUser?.id, item.record_id)
+                        useditem(
+                          dataDetailUser?.id,
+                          item.record_id,
+                          item.image_item
+                        )
                       }
                     >
                       <Image

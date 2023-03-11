@@ -55,14 +55,26 @@ export const authenticationSlice = createSlice({
         state.data.coin = action.payload.coin
       }
     },
+
+    update_frame: (state, action: PayloadAction<{ frame: string }>) => {
+      if (state.data) {
+        state.data.frame = action.payload.frame
+      }
+    },
+
     SIGN_IN: (state, action: PayloadAction<ILoginResponse>) => {
       state.data = action.payload
     }
   }
 })
 
-export const { updateProfile, update_coin, SIGN_IN, updateProfileRefresh } =
-  authenticationSlice.actions
+export const {
+  updateProfile,
+  update_coin,
+  update_frame,
+  SIGN_IN,
+  updateProfileRefresh
+} = authenticationSlice.actions
 
 export const dataProfile = (state: RootState) => state.authentication.data
 
