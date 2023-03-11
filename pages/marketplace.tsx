@@ -1,8 +1,7 @@
 import MarketShow from "@components/atom/marketshow"
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar"
-import { updateProfile } from "@feature/authentication/authenticationSlice"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 
 const Marketplace = () => {

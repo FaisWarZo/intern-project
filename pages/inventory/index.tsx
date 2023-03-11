@@ -62,7 +62,7 @@ const Inventory = () => {
         <section className="pt-5 text-gray-600">
           <div className=" aboutcard container mx-auto mt-10 flex max-w-5xl justify-center rounded-lg bg-gray-900 px-20">
             <div className="container mx-auto mt-16 grid grid-cols-3 gap-10">
-              {state ? (
+              {dataDetailUser && state ? (
                 state.map((item) => (
                   <div
                     className="gamelistheader"
@@ -72,7 +72,7 @@ const Inventory = () => {
                       className="group relative"
                       onClick={() =>
                         useditem(
-                          dataDetailUser?.id,
+                          dataDetailUser.id,
                           item.record_id,
                           item.image_item
                         )
@@ -88,7 +88,7 @@ const Inventory = () => {
                       <div className=" absolute top-0 right-0 flex h-full w-full justify-center bg-gradient-to-t from-black via-black opacity-0 group-hover:opacity-70" />
                       <div className="absolute top-0 left-0 flex h-full w-full items-center justify-center opacity-0 hover:opacity-100">
                         <div className="flex text-center text-xl font-bold">
-                          {item.image_item === dataDetailUser?.frame ? (
+                          {item.image_item === dataDetailUser.frame ? (
                             <h2 className="mr-3 text-red-500 ">EQUIPED</h2>
                           ) : (
                             <h2 className="mr-3 text-green-500">USE</h2>

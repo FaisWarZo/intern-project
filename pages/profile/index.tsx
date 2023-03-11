@@ -73,10 +73,7 @@ const ProfileDetail = () => {
 
             <div className="aboutcard m-24 mx-auto mb-40 w-2/5 items-center bg-gray-900 text-center">
               <div className="px-6 py-6">
-                <div
-                  onClick={() => Router.push("")}
-                  className="flex justify-end"
-                >
+                <div className="flex justify-end">
                   <FaUserEdit
                     size={30}
                     color="#9ca3af"
@@ -84,6 +81,7 @@ const ProfileDetail = () => {
                     onMouseOut={({ target }) =>
                       (target.style.color = "#9ca3af")
                     }
+                    onClick={() => Router.push("/edit_profile")}
                   />
                 </div>
                 <h2 className="text-xl text-gray-200 ">
@@ -96,10 +94,10 @@ const ProfileDetail = () => {
                   <span className="font-semibold">Coins : </span>
                   {dataDetailUser?.coin}
                   <br />
-                  <span className="font-semibold">First Name : </span>
+                  <span className="font-semibold">First name : </span>
                   {dataDetailUser?.first_name}
                   <br />
-                  <span className="font-semibold">Last Name : </span>
+                  <span className="font-semibold">Last name : </span>
                   {dataDetailUser?.last_name}
                   <br />
                 </p>

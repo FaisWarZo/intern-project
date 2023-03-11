@@ -35,6 +35,7 @@ export const authenticationSlice = createSlice({
     updateProfile: (state, action: PayloadAction<IDatauser>) => {
       state.data = action.payload
     },
+
     updateProfileRefresh: (state, action: PayloadAction<IGetuserByEmail>) => {
       const _data = {
         username: action.payload.username,
@@ -50,6 +51,7 @@ export const authenticationSlice = createSlice({
       }
       state.data = _data
     },
+
     update_coin: (state, action: PayloadAction<{ coin: number }>) => {
       if (state.data) {
         state.data.coin = action.payload.coin
@@ -59,6 +61,21 @@ export const authenticationSlice = createSlice({
     update_frame: (state, action: PayloadAction<{ frame: string }>) => {
       if (state.data) {
         state.data.frame = action.payload.frame
+      }
+    },
+
+    edit_profile: (
+      state,
+      action: PayloadAction<{
+        username: string
+        first_name: string
+        last_name: string
+      }>
+    ) => {
+      if (state.data) {
+        state.data.username = action.payload.username
+        state.data.first_name = action.payload.first_name
+        state.data.last_name = action.payload.last_name
       }
     },
 
@@ -72,6 +89,7 @@ export const {
   updateProfile,
   update_coin,
   update_frame,
+  edit_profile,
   SIGN_IN,
   updateProfileRefresh
 } = authenticationSlice.actions
