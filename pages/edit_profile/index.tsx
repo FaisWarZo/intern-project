@@ -69,7 +69,7 @@ const EditUser = () => {
                       })}
                       type="text"
                       id="username"
-                      defaultValue={dataDetailUser?.username}
+                      defaultValue={dataDetailUser.username}
                       placeholder="Username"
                       className="ml-5 bg-colorinput-black"
                     />
@@ -97,7 +97,7 @@ const EditUser = () => {
                       })}
                       type="text"
                       id="fname"
-                      defaultValue={dataDetailUser?.first_name}
+                      defaultValue={dataDetailUser.first_name}
                       placeholder="First name"
                       className="ml-5 bg-colorinput-black"
                     />
@@ -126,7 +126,7 @@ const EditUser = () => {
                       })}
                       type="text"
                       id="lname"
-                      defaultValue={dataDetailUser?.last_name}
+                      defaultValue={dataDetailUser.last_name}
                       placeholder="Last name"
                       className="ml-5 bg-colorinput-black"
                     />
