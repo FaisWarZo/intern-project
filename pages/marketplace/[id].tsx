@@ -23,6 +23,7 @@ const Itemdetail = () => {
   const router = useRouter()
   const { id } = router.query
   const [state, setState] = useState<IItemdetail>()
+  const [onMouseInOut, setOnMouseInOut] = useState<boolean>(false)
   const dispatch = useDispatch()
   const dataDetailUser = useSelector(dataProfile)
 
@@ -69,9 +70,9 @@ const Itemdetail = () => {
             >
               <FaArrowLeft
                 size={40}
-                color="#9ca3af"
-                onMouseOver={({ target }) => (target.style.color = "white")}
-                onMouseOut={({ target }) => (target.style.color = "#9ca3af")}
+                color={onMouseInOut ? "white" : "#9ca3af"}
+                onMouseOver={() => setOnMouseInOut(true)}
+                onMouseOut={() => setOnMouseInOut(false)}
               />
             </Link>
             <h2 className="w-full text-center text-2xl text-white md:text-3xl">

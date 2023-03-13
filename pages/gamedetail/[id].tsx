@@ -17,6 +17,7 @@ const Gamedetail = () => {
   const { id } = router.query
   const [state, setState] = useState<IGameDetail>()
   const dataDetailUser = useSelector(dataProfile)
+  const [onMouseInOut, setOnMouseInOut] = useState<boolean>(false)
 
   useEffect(() => {
     async function fetchData() {
@@ -44,9 +45,9 @@ const Gamedetail = () => {
             >
               <FaArrowLeft
                 size={40}
-                color="#9ca3af"
-                onMouseOver={({ target }) => (target.style.color = "white")}
-                onMouseOut={({ target }) => (target.style.color = "#9ca3af")}
+                color={onMouseInOut ? "white" : "#9ca3af"}
+                onMouseOver={() => setOnMouseInOut(true)}
+                onMouseOut={() => setOnMouseInOut(false)}
               />
             </Link>
             <h2 className="mb-10 w-full text-center text-2xl text-white md:text-3xl">

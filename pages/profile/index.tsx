@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable no-console */
 /* eslint-disable no-return-assign */
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar"
 import { FaArchive, FaArrowLeft, FaUserEdit } from "react-icons/fa"
@@ -15,6 +15,7 @@ import Router from "next/router"
 const ProfileDetail = () => {
   const dispatch = useDispatch()
   const dataDetailUser = useSelector(dataProfile)
+  const [onMouseInOut, setOnMouseInOut] = useState<boolean>(false)
 
   return (
     <>
@@ -27,9 +28,9 @@ const ProfileDetail = () => {
           >
             <FaArrowLeft
               size={40}
-              color="#9ca3af"
-              onMouseOver={({ target }) => (target.style.color = "white")}
-              onMouseOut={({ target }) => (target.style.color = "#9ca3af")}
+              color={onMouseInOut ? "white" : "#9ca3af"}
+              onMouseOver={() => setOnMouseInOut(true)}
+              onMouseOut={() => setOnMouseInOut(false)}
             />
           </div>
           <h2 className="mb-10 w-full text-center text-2xl text-white md:text-3xl">
@@ -41,11 +42,11 @@ const ProfileDetail = () => {
                 onClick={() => Router.push("/inventory")}
                 className="pl-auto"
               >
-                <FaArchive
+                <FaArrowLeft
                   size={40}
-                  color="#9ca3af"
-                  onMouseOver={({ target }) => (target.style.color = "white")}
-                  onMouseOut={({ target }) => (target.style.color = "#9ca3af")}
+                  color={onMouseInOut ? "white" : "#9ca3af"}
+                  onMouseOver={() => setOnMouseInOut(true)}
+                  onMouseOut={() => setOnMouseInOut(false)}
                 />
               </div>
             </div>
@@ -76,11 +77,9 @@ const ProfileDetail = () => {
                 <div className="flex justify-end">
                   <FaUserEdit
                     size={30}
-                    color="#9ca3af"
-                    onMouseOver={({ target }) => (target.style.color = "white")}
-                    onMouseOut={({ target }) =>
-                      (target.style.color = "#9ca3af")
-                    }
+                    color={onMouseInOut ? "white" : "#9ca3af"}
+                    onMouseOver={() => setOnMouseInOut(true)}
+                    onMouseOut={() => setOnMouseInOut(false)}
                     onClick={() => Router.push("/edit_profile")}
                   />
                 </div>
