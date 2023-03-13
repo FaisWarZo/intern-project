@@ -42,7 +42,7 @@ const ProfileDetail = () => {
                 onClick={() => Router.push("/inventory")}
                 className="pl-auto"
               >
-                <FaArrowLeft
+                <FaArchive
                   size={40}
                   color={onMouseInOut ? "white" : "#9ca3af"}
                   onMouseOver={() => setOnMouseInOut(true)}
