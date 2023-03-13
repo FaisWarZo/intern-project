@@ -33,9 +33,6 @@ const MarketShow = () => {
     fetchData()
   }, [dataDetailUser])
 
-  console.log("inventory", inventory)
-  console.log("state", state)
-
   return (
     <>
       <div className="container mx-auto mt-16 grid grid-cols-5 gap-10">

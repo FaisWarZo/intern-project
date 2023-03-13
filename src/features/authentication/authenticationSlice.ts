@@ -81,17 +81,20 @@ export const authenticationSlice = createSlice({
 
     SIGN_IN: (state, action: PayloadAction<ILoginResponse>) => {
       state.data = action.payload
-    }
+    },
+
+    SIGN_OUT: () => initialState
   }
 })
 
 export const {
+  updateProfileRefresh,
   updateProfile,
   update_coin,
   update_frame,
   edit_profile,
   SIGN_IN,
-  updateProfileRefresh
+  SIGN_OUT
 } = authenticationSlice.actions
 
 export const dataProfile = (state: RootState) => state.authentication.data

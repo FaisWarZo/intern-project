@@ -9,18 +9,23 @@ import {
   FaHome,
   FaGamepad
 } from "react-icons/fa"
-import { useSelector } from "react-redux"
-import { dataProfile } from "@feature/authentication/authenticationSlice"
+import { useDispatch, useSelector } from "react-redux"
+import {
+  dataProfile,
+  SIGN_OUT
+} from "@feature/authentication/authenticationSlice"
+import Router from "next/router"
 
 const Navbar = () => {
   const dataDetailUser = useSelector(dataProfile)
   const [isOpen, setIsOpen] = useState(false)
+  const dispatch = useDispatch()
 
   useEffect(() => {}, [])
 
   const signout = () => {
     window.localStorage.clear()
-    window.location.reload()
+    dispatch(SIGN_OUT())
   }
 
   const toggleDropdown = () => {
@@ -211,3 +216,6 @@ const Navbar = () => {
 }
 
 export default Navbar
+function dispatch(arg0: any) {
+  throw new Error("Function not implemented.")
+}
