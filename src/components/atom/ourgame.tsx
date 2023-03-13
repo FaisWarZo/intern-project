@@ -74,7 +74,7 @@ const Hotgame = () => {
                     src={`${
                       imgSrc
                         ? "https://cdn.discordapp.com/attachments/616664805897666560/1084812984615964714/download.png"
-                        : `http://localhost:5000/$%7Bitem.image_main%7D`
+                        : `http://localhost:5000/${item.image_main}`
                     }`}
                     className="rounded-lg"
                     width={214}
