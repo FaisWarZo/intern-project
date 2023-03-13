@@ -6,9 +6,7 @@ import { getAllGame } from "@src/services/api/getallgame"
 
 const Hotgame = () => {
   const [state, setState] = useState<IAllGame[]>()
-  const [imgSrc, setImgSrc] = useState(
-    "https://cdn.discordapp.com/attachments/616664805897666560/1084812984615964714/download.png"
-  )
+  const [imgSrc, setImgSrc] = useState(false)
 
   useEffect(() => {
     async function fetchData() {
@@ -73,12 +71,16 @@ const Hotgame = () => {
                 <div className="aboutcard bg-gray-900">
                   <Image
                     alt="1"
-                    src={`http://localhost:5000/${item.image_main}`}
+                    src={`${
+                      imgSrc
+                        ? "https://cdn.discordapp.com/attachments/616664805897666560/1084812984615964714/download.png"
+                        : `http://localhost:5000/$%7Bitem.image_main%7D`
+                    }`}
                     className="rounded-lg"
                     width={214}
                     height={214}
                     onError={() => {
-                      setImgSrc(imgSrc)
+                      setImgSrc(true)
                     }}
                   />
                   <div className="px-4 py-4">
