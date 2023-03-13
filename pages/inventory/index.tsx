@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/button-has-type */
 import Footer from "@components/Footer"
@@ -42,7 +43,7 @@ const Inventory = () => {
       if (status && data) {
         setState(data)
       } else {
-        router.push("/")
+        console.log(data)
       }
     }
     if (dataDetailUser) {

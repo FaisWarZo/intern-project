@@ -14,13 +14,13 @@ const Register = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
+    watch
   } = useForm()
-
-  console.log("errors", errors)
+  const password = watch("password")
+  const confirmPassword = watch("confirmPassword")
 
   const onSubmit = async (data) => {
-    console.log(data)
     const { status, data: regisData, message } = await registerUser(data)
     if (status && regisData) {
       toast.success(message)
@@ -125,6 +125,33 @@ const Register = () => {
             <ErrorMessage
               errors={errors}
               name="password"
+              render={({ message }) => (
+                <div className="mt-2 text-red-500">{message}</div>
+              )}
+            />
+
+            <div className="btn-input">
+              <div className="flex justify-between">
+                <FaUnlockAlt
+                  size={20}
+                  className="mt-2.5"
+                />
+                <input
+                  {...register("confirmPassword", {
+                    required: "Confirm Password is required",
+                    validate: (value) =>
+                      value === password || "Passwords do not match"
+                  })}
+                  name="confirmPassword"
+                  type="password"
+                  placeholder="Confirm Password"
+                  className="ml-5 bg-colorinput-black"
+                />
+              </div>
+            </div>
+            <ErrorMessage
+              errors={errors}
+              name="confirmPassword"
               render={({ message }) => (
                 <div className="mt-2 text-red-500">{message}</div>
               )}
