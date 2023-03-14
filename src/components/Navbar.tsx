@@ -46,7 +46,7 @@ const Navbar = () => {
             width={65}
             height={65}
           />
-          <span className="mt-1 self-center whitespace-nowrap text-2xl text-white">
+          <span className="mt-1 self-center whitespace-nowrap text-2xl text-white max-md:hidden md:inline">
             <h2 className="text-base">GAME_FILLING</h2>
           </span>
         </Link>
@@ -111,7 +111,7 @@ const Navbar = () => {
             data-collapse-toggle="navbar-sticky"
             type="button"
             onClick={toggleDropdown}
-            className="inline-flex items-center rounded-lg p-2 text-lg text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
+            className="inline-flex items-center rounded-lg p-2 text-lg text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 lg:hidden"
             aria-controls="navbar-sticky"
             aria-expanded="false"
           >
@@ -132,7 +132,7 @@ const Navbar = () => {
           </button>
         </div>
         <div
-          className={`w-full items-center justify-between md:order-1 md:flex md:w-auto 
+          className={`w-full items-center justify-between lg:order-1 lg:flex lg:w-auto 
           ${isOpen ? "visible" : "hidden"}`}
           id="navbar-sticky"
         >
