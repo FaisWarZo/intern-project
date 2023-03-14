@@ -89,7 +89,7 @@ const Gamedetail = () => {
                 Game Features
               </h5>
               <p className="mb-4 text-base text-gray-300">{state?.detail}</p>
-              {dataDetailUser ? (
+              {dataDetailUser && state.is_active ? (
                 <a
                   target="_blank"
                   className="mt-2 flex flex-col items-center"
@@ -104,9 +104,25 @@ const Gamedetail = () => {
                   </button>
                 </a>
               ) : (
-                <div className="mt-10 flex flex-col items-center">
-                  <h2 className="text-2xl text-gray-500">Please login 👆</h2>
+                <a
+                  target="_blank"
+                  className="mt-2 flex flex-col items-center"
+                  rel="noreferrer"
+                >
+                  <button
+                    className="graybutton"
+                    type="submit"
+                  >
+                    PLAY
+                  </button>
+                </a>
+              )}
+              {!dataDetailUser ? (
+                <div className="mt-5 flex flex-col items-center">
+                  <h2 className="text-base text-gray-500">Please login👆</h2>
                 </div>
+              ) : (
+                <></>
               )}
             </div>
           </div>
